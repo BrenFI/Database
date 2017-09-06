@@ -1,0 +1,333 @@
+Cuadro Básico - Central de Equipos y Esterilización
+Cuadro Básico - Estomatología
+Cuadro Básico - Ginecología y Obstetricia
+Cuadro Básico - Médicas y Quirúrgicas
+Cuadro Básico - Medicina Preventiva
+Cuadro Básico - Planificación Familiar
+Material de Curación - Anestesiología
+Material de Curación - Cardiología Intervencionista
+Material de Curación - Cardiología de Uso General
+Material de Curación - Central de Equipos y Esterilización
+Material de Curación - Cirugía Cardiotorácica y Cardiovascular
+Material de Curación - Cirugía General
+Material de Curación - Cirugía Máxilofacial
+Material de Curación - Cirugía Reconstructiva
+Material de Curación - Estomatología
+Material de Curación - Fisiología Pulmonar
+Material de Curación - Ginecología y Obstetricia
+Material de Curación - Médicas y Quirúrgicas
+Material de Curación - Nefrología o Cirugía General
+Material de Curación - Neurocirugía, Neuroradiología y Terapia Neuroendovascular
+Material de Curación - Oftalmología
+Material de Curación - Otorrinolaringología
+Material de Curación - Quirúrgicas
+Material de Curación - Radiodiagnóstico
+Material de Curación - Traumatología y Ortopedia
+Material de Curación - Urología
+Material de Curación - Materiales de Uso Diverso
+Material de Curación - Materiales de ostesíntesis
+Material de Curación - Sistemas de ostesíntesis
+Material de Curación - Materiales de endoprótesis
+Material de Curación - Sistemas de endoprótesis
+Instrumental - Básico
+Instrumental - Catálogo
+Equipo Médico - Electrónica médica
+Equipo Médico - Imagenología 
+Equipo Médico - Implantables
+Equipo Médico - Mecánica y fluidos
+Equipo Médico - Medicina física y rehabilitación
+Equipo Médico - Medicina nuclear 
+Equipo Médico - Oftalmología
+Equipo Médico - Óptica 
+Equipo Médico - Prótesis 
+Equipo Médico - Quirófano
+Equipo Médico - Radioterapia
+Medicamentos - Agentes Digestivos, Incluyendo Enzimas
+Medicamentos - Antieméticos
+Medicamentos - Anticoagulantes no Inyectables
+Medicamentos - Anticoagulantes Inyectables
+Medicamentos - Inhibidores de la Agregación Plaquetaria
+Medicamentos - Fibrinolíticos
+Medicamentos - Inhibidores Directos De La Trombina
+Medicamentos - Otros Agentes Trombóticos
+Medicamentos - Agentes Tópicos para el Tratamiento de la Psoriasis
+Medicamentos - Agentes Sistémicos para el Tratamiento de la Psoriasis y Productos Similares
+Medicamentos - Otros Productos no Esteroides para Tratar Trastornos Inflamatorios de la Piel
+Medicamentos - Anti Infecciosos Óticos
+Medicamentos - Combinaciones de Corticosteroides con Antiinfecciosos
+Medicamentos - Otros Productos Óticos
+Medicamentos - Preparados adelgazantes
+Medicamentos - Suplementos Proteínicos
+Medicamentos - Fórmulas Infantiles
+Medicamentos - Otros Nutrientes
+Medicamentos - Agentes Inmunoestimulantes Excepto los Interferones
+Medicamentos - Interferones
+Medicamentos - Agentes Inmunosupresores Selectivos
+Medicamentos - Agentes Curativos, Heridas
+Medicamentos - Glucósidos Cardioactivos y sus Combinaciones
+Medicamentos - Antiarrítmicos
+Medicamentos - Estimulantes Cardiacos Excluyendo a los Glucósidos Cardioactivos
+Medicamentos - Terapia Coronaria, Excluyendo Antagonistas del Calcio / Nitritos
+Medicamentos - Nitritos y Nitratos
+Medicamentos - Agentes Inotrópicos Positivos
+Medicamentos - Todas las Demás Preparaciones para el Corazón
+Medicamentos - Inhibidores de la ECA Solos
+Medicamentos - Inhibidores de la ECA Combinados
+Medicamentos - Antagonistas de la Angiotensina II Solos
+Medicamentos - Antagonistas de la Angiotensina II Combinados
+Medicamentos - Otros Agentes Activos En El Sistema De Angiotensinas Reninas
+Medicamentos - Medicamentos para el Tratamiento de las Enfermedades Vasculares Cerebrales y Periféricas
+Medicamentos - Agentes para Infecciones Fúngicas Sistemicas
+Medicamentos - Hormonas Anabólicas Sistémicas
+Medicamentos - Otros Agentes Anabólicos Sistémicos
+Medicamentos - Narcóticos
+Medicamentos - No Narcóticos y Antipiréticos
+Medicamentos - Preparaciones en contra de la Migraña
+Medicamentos - Anestésicos Generales
+Medicamentos - Anestésicos Locales
+Medicamentos - Calcioantagonistas Solos
+Medicamentos - Calcioantagonistas Combinados
+Medicamentos - Antiácidos, Antiflatulentos y Carminativos
+Medicamentos - Antiulcerosos
+Medicamentos - Tetraciclinas y Combinaciones
+Medicamentos - Cloramfenicol y Combinaciones
+Medicamentos - Penicilinas de Amplio Espectro
+Medicamentos - Cefalosporinas
+Medicamentos - Trimetroprim y Sustancias Similares
+Medicamentos - Macrólidos y Similares
+Medicamentos - Fluoroquinolonas
+Medicamentos - Penicilinas de Espectro Medio y Reducido
+Medicamentos - Aminoglucósidos
+Medicamentos - Carbenicilina y Similares
+Medicamentos - Rifampicina-Rifamicina
+Medicamentos - Otros Antibacterianos Beta-Lactámicos, Excluyendo Penicilinas y Cefalosporinas
+Medicamentos - Otros Antibióticos
+Medicamentos - Antiepilépticos
+Medicamentos - Antidiarreicos con Efecto Antiinfeccioso a Nivel Intestinal
+Medicamentos - Antidiarreicos y Absorbentes
+Medicamentos - Formulacion de Sales de Hidratación Oral
+Medicamentos - Agentes Antiinflamatorios Intestinales
+Medicamentos - Microorganismos Usados Como Antidiarreicos
+Medicamentos - Tratamiento de Reemplazo Oral con Electrólitos
+Medicamentos - Inhibidores de la Motilidad
+Medicamentos - Todos los Demás Antidiarreicos
+Medicamentos - Antiespasmódicos y Anticolinérgicos Solos
+Medicamentos - Combinaciones de Antiespasmódicos con Ataráxicos
+Medicamentos - Combinaciones de Analgésicos con Antiespasmódicos
+Medicamentos - Antiespasmódicos Combinados con otros Productos
+Medicamentos - Gastroprocinéticos
+Medicamentos - Moduladores Sensorimotores
+Medicamentos - Antagonistas (Antidotos de los Anticoagulantes)
+Medicamentos - Inhibidores de Proteinasas
+Medicamentos - Coagulación sanguínea
+Medicamentos - Hemostáticos Sistémicos
+Medicamentos - Antihipertensivos Solos (No Herbolarios)
+Medicamentos - Alcaloides de la Rawolfia y Otros Agentes Fitoterapéuticos Antihipertensivos Combinados con Diuréticos
+Medicamentos - Otros Antihipertensivos
+Medicamentos - Antihistamínicos Sistémicos
+Medicamentos - Tricomonicidas
+Medicamentos - Antimicóticos Ginecológicos
+Medicamentos - Antibióticos y Sulfonamidas
+Medicamentos - Antisépticos Ginecológicos
+Medicamentos - Antirreumáticos no Esteroideos
+Medicamentos - Antirreumáticos Corticosteroideos en Combinación
+Medicamentos - Antirreumáticos Específicos
+Medicamentos - Productos para el Tratamiento de la Tuberculosis
+Medicamentos - Productos para el Tratamiento de la Lepra
+Medicamentos - Antimicóticos de Uso Dermatológico
+Medicamentos - Agentes Alquilantes
+Medicamentos - Antimetabolitos
+Medicamentos - Alcaloides de la Vinca y Otros Productos de Plantas
+Medicamentos - Antibióticos Antineoplásicos
+Medicamentos - Otros Antineoplásicos
+Medicamentos - Antipruriginosos, Incluyendo Antihistamínicos Tópicos, Anestésicos, Etc.
+Medicamentos - Antirreumáticos Tópicos
+Medicamentos - Antisépticos Quirúigicos
+Medicamentos - Antisépticos y Desinfectantes Tópicos
+Medicamentos - Agentes Tópicos para el Tratamiento de las Hemorroides
+Medicamentos - Tratamientos Tópicos para las Venas Varicosas
+Medicamentos - Tratamientos Sistémicos para las Venas Varicosas
+Medicamentos - Agentes de Accion Directa
+Medicamentos - Antivirales, Excluyendo Productos Anti-VIH
+Medicamentos - Antivirales para VIH
+Medicamentos - Antibióticos y Sulfonamidas de Uso Tópico
+Medicamentos - Productos Tópicos para el Tratamiento de las Infecciones Virales
+Medicamentos - Contraceptivos Físicos
+Medicamentos - Equipos Médicos de Medición
+Medicamentos - Beta Bloqueadores Solos
+Medicamentos - Agentes Beta Bloqueadores Combinados
+Medicamentos - Terapéutica Biliar y Colagogos
+Medicamentos - Protectores Hepáticos y Lipotrópicos
+Medicamentos - Corticosteroides Sistémicos, Puros
+Medicamentos - Combinaciones de Corticosteroides Sistémicos
+Medicamentos - Corticosteroides Tópicos Solos
+Medicamentos - Combinaciones de Corticoesteroides Tópicos
+Medicamentos - Diuréticos
+Medicamentos - Ectoparasiticidas, Incluyendo Escabicidas.
+Medicamentos - Insecticidas y Repelentes
+Medicamentos - Emolientes y Protectores
+Medicamentos - Enzimas Antiinflamatorias
+Medicamentos - Estimulantes del Apetito
+Medicamentos - Estomatológicos
+Medicamentos - Gelatina en Soluciones
+Medicamentos - Agentes para la Reducción de las Concentraciones de Colesterol y Triglicéridos
+Medicamentos - Hormonas anti Hormona Paratiroidea
+Medicamentos - Hormonas del Lóbulo Anterior de la Hipófisis y Análogos
+Medicamentos - Gonadotropina-Hormonas Liberadoras
+Medicamentos - Anticonceptivos Hormonales Sistémicos
+Medicamentos - Andrógenos, Excluyendo G3E, G3F
+Medicamentos - Estrógenos, Excluyendo G3A, G3E, G3F
+Medicamentos - Progestágenos, Excluyendo G3A, G3F
+Medicamentos - Combinaciones de Andrógenos con Hormonas Femeninas
+Medicamentos - Estrógenos Combinados con Progestágenos, Excluyendo G3A
+Medicamentos - Gonadotropinas , Incluyendo Otros Estimulantes de la Ovulación
+Medicamentos - Otras Hormonas Sexuales
+Medicamentos - Moduladores Selectivos de Receptores de Estrogeno
+Medicamentos - Otras Hormonas Sexuales Y Productos Similares
+Medicamentos - Laxantes
+Medicamentos - Apósito de espesor parcial o completo
+Medicamentos - Accesorio para Venoclisis
+Medicamentos - Medicamentos contra el Mal de Parkinson
+Medicamentos - Insulinas Humanas y sus Análogos
+Medicamentos - Sulfonilureas
+Medicamentos - Biguanidas Antidiabéticas
+Medicamentos - Glitazonas, Antidiabéticos Orales (Tiazolidinedionas)
+Medicamentos - Inhibidores de la Alfa Glucosidasa
+Medicamentos - Antidiabéticos Orales Glinidas
+Medicamentos - Inhibidores de la DPP IV
+Medicamentos - GLP-1 Agonistas Antidiabéticos
+Medicamentos - Otros Medicamentos Usados para el Tratamiento de la Diabetes
+Medicamentos - Medios de Contraste para Rayos X no Iodados
+Medicamentos - Anti-Infecciosos de Uso Oftalmológico
+Medicamentos - Corticoesteroides Oftalmológicos
+Medicamentos - Combinaciones de Corticoesteroides con Agentes Antiinfecciosos
+Medicamentos - Agentes Antivirales Oftalmológicos
+Medicamentos - Mióticos y Preparaciones contra el Glaucoma
+Medicamentos - Midriaticos y Cicloplegicos
+Medicamentos - Preparaciones para el Tratamiento de la Conjuntivitis Inespecífica
+Medicamentos - Lagrimas Artificiales y Lubricantes Oculares
+Medicamentos - Soluciones para Lentes de Contacto
+Medicamentos - Productos Oftalmológicos para la Antineovascularización
+Medicamentos - Antiinflamatorios no Esteroideos de Uso Oftálmico
+Medicamentos - Otros Oftalmológicos
+Medicamentos - Medicamentos Parasimpatomiméticos
+Medicamentos - Productos Antitabaquismo
+Medicamentos - Productos contra el Vértigo
+Medicamentos - Productos contra la Enfermedad de Alzheimer
+Medicamentos - Medicamentos Usados para el Tratamiento del Alcoholismo
+Medicamentos - Todas las Demás Drogas que Actúan Sobre el SNC
+Medicamentos - Calcitoninas
+Medicamentos - Glucagon
+Medicamentos - Hormonas de Crecimiento
+Medicamentos - Hormonas Antidiuréticas
+Medicamentos - Hormonas Paratiroideas y Análogos
+Medicamentos - Otras Hormonas y Compuestos con Acción Similar
+Medicamentos - Otras Hormonas y Preparados con efectos Similares
+Medicamentos - Otras Preparaciones Dermatológicas
+Medicamentos - Anaerobicidas
+Medicamentos - Reguladores del Calcio Óseo
+Medicamentos - Otros Productos para Tratar el Sistema Musculoesquelético
+Medicamentos - Otros Medicamentos Para desordenes del Sistema Musculoesquelético
+Medicamentos - Otros Productos Cardiovasculares
+Medicamentos - Inductores del Trabajo de Parto
+Medicamentos - Anticonceptivos Tópicos
+Medicamentos - Inhibidores de la Producción de Prolactina
+Medicamentos - Inhibidores del Trabajo de Parto
+Medicamentos - Hormonas Sexuales Tópicas
+Medicamentos - Otros Productos Ginecológicos
+Medicamentos - Otros Productos que Actúan Sobre el Metabolismo y el Tracto Gastrointestinal
+Medicamentos - Estimulantes Respiratorios
+Medicamentos - Otros Productos del Sistema Respiratorio
+Medicamentos - Demás Productos Terapéuticos
+Medicamentos - Agentes Destoxificantes o Protectores para el Tratamiento Antineoplásico
+Medicamentos - Agentes Quelantes del Hierro
+Medicamentos - Productos para la Hiperfosfatemia y para la Hiperkalemia
+Medicamentos - Otros Productos Terapéuticos
+Medicamentos - Hematínicos, Hierro y sus Combinaciones
+Medicamentos - Productos con Eritropoyetina
+Medicamentos - Otros Productos Antianémicos Como el Ácido Fólico y Folínico
+Medicamentos - Preparaciones Antigotosas
+Medicamentos - Agonistas-B2
+Medicamentos - Xantinas
+Medicamentos - Antiinflamatorios No Esteroideos
+Medicamentos - Corticoides
+Medicamentos - Combinaciones de Agonistas B-2 con Corticoides
+Medicamentos - Anticolinérgicos Sencillos y sus Combinaciones con Agonistas-B2
+Medicamentos - Dispositivos para Condiciones Asmáticas
+Medicamentos - Antiasmáticos Antileucotrieno
+Medicamentos - Todos los Demás Productos para Asma y Epoc
+Medicamentos - Formulaciones Tópicas contra el Acné
+Medicamentos - Preparaciones Orales contra el Acné
+Medicamentos - Preparaciones contra la Obesidad, Excluyendo los Agentes Dietéticos
+Medicamentos - Preparaciones contra el Resfriado Sin Agentes Antiinfecciosos
+Medicamentos - Preparaciones contra el Resfriado-Tos con Agentes Antiinfecciosos
+Medicamentos - Expectorantes
+Medicamentos - Antitusivos
+Medicamentos - Preparaciones Nasales Tópicas
+Medicamentos - Preparaciones Nasales Sistémicas
+Medicamentos - Preparados para la Garganta
+Medicamentos - Amebicidas
+Medicamentos - Antihelmínticos, Excluyendo Esquistomicidas
+Medicamentos - Antimaláricos
+Medicamentos - Escabicidas y Ectoparsiticidas
+Medicamentos - Reguladores de Lípidos para Terápia Múltiple Cardiovascular
+Medicamentos - Pruebas de Embarazo y Ovulación
+Medicamentos - Antidepresivos y Estabilizadores del Ánimo
+Medicamentos - Psicoestimulantes
+Medicamentos - Psicolepticos / Psicoanalépticos
+Medicamentos - Nootrópicos (Noosténicos)
+Medicamentos - Neurotónicos y Otros Productos Misceláneos
+Medicamentos - Antipsicóticos
+Medicamentos - Hipnóticos-Sedantes
+Medicamentos - Tranquilizantes
+Medicamentos - Relajantes Musculares de Acción Periférica
+Medicamentos - Relajantes Musculares de Acción Central
+Medicamentos - Revulsivos y Otros Inhalantes
+Medicamentos - Soluciones Protéicas
+Medicamentos - Soluciones con Electrolitos (>=100 Ml)
+Medicamentos - Soluciones Estándar
+Medicamentos - Soluciones con Aminoácidos
+Medicamentos - Soluciones para Infusión Especial
+Medicamentos - Soluciones Electrolíticas (<100 ML)
+Medicamentos - Otras Soluciones Inyectables Infusiones Aditivas
+Medicamentos - Soluciones Peritoneo Dialíticas
+Medicamentos - Material Postquirúrgico
+Medicamentos - Sueros Antitoxinas
+Medicamentos - Inmunoglobulinas Polivalentes, Intravenosas
+Medicamentos - Inmunoglobulinas Específicas Antibacterianas
+Medicamentos - Otras Inmunoglobulinas Específicas
+Medicamentos - Productos con Calcio
+Medicamentos - Productos con Potasio
+Medicamentos - Otros suplementos Minerales
+Medicamentos - Preparaciones con Hormonas Tiroideas
+Medicamentos - Preparaciones Antitiroideas
+Medicamentos - Hormonas Citostáticas
+Medicamentos - Antagonistas de Hormonas Citostáticas
+Medicamentos - Antagonistas de las Hormonas Citostáticas
+Medicamentos - Anti-Infecciosos y Antisépticos Urinarios
+Medicamentos - Otras Preparaciones Urológicas
+Medicamentos - Productos para la Hiperplásia Prostática Benigna
+Medicamentos - Productos Para la Incontinencia Urinaria
+Medicamentos - Otros Productos Urológicos
+Medicamentos - Vacunas Puras
+Medicamentos - Combinaciones de Vacunas
+Medicamentos - Otras Vacunas
+Medicamentos - Multivitaminas con Minerales
+Medicamentos - Multivitaminas Sin Minerales
+Medicamentos - Vitaminas A y D, incluyendo las combinaciones de ambas
+Medicamentos - Vitamina B1 y Combinaciones de Vitaminas B1, B6 y B12
+Medicamentos - Complejo B
+Medicamentos - Vitamina B12 Sola
+Medicamentos - Vitamina C Excluyendo Las Combinaciones con Minerales
+Medicamentos - Otros Preparados de Vitaminas
+Medicamentos - Otros Preparados con Vitaminas, Combinaciones
+Medicamentos - Otras Vitaminas
+Medicamentos - Estupefacientes
+Medicamentos - Psicotrópicos
+Laboratorio - Análisis clínicos
+Laboratorio - Perfiles
+Laboratorio - Estudios Especiales
+Laboratorio - Patología
+Laboratorio - Radiología
+Laboratorio - Ultrasonidos
+Hospitalización - General
