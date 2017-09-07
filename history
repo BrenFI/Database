@@ -1,0 +1,1584 @@
+grant all on *.* to 'admin'@'%' identified by 'Password123$';
+grant all on *.* to admin@% identified by 'Password123$'
+;
+grant all on *.* to 'admin'@'%' identified by 'Password123$'
+;
+create database angeles;
+grant all on *.* to 'admin'@'%' identified by 'Password123$'
+;
+flush privileges;
+create database angeles;
+use angeles;
+select * from usuario;
+describe insumo;
+describe registro;
+INSERT INTO insumo (nombre,codigo) 
+  SELECT 'hola','hh' FROM DUAL
+WHERE NOT EXISTS 
+  (SELECT nombre FROM insumo WHERE nombre='hola');
+INSERT INTO insumo (nombre,codigo)    SELECT 'hola','hh' FROM DUAL WHERE NOT EXISTS    (SELECT nombre FROM insumo WHERE nombre='hola');
+select * from insumo;
+INSERT INTO insumo (nombre,codigo) 
+  SELECT 'hola','hh' FROM DUAL
+WHERE NOT EXISTS 
+  (SELECT nombre FROM insumo WHERE nombre='hola');
+INSERT INTO insumo (nombre,codigo)    SELECT 'hola','hh' FROM DUAL WHERE NOT EXISTS    (SELECT nombre FROM insumo WHERE nombre='hola');
+ls
+;
+select * from insumo;
+INSERT INTO insumo (nombre,codigo) SELECT 'hola','hh' FROM DUAL WHERE NOT EXISTS (SELECT nombre FROM insumo WHERE nombre='hola');
+INSERT INTO insumo (nombre,codigo) SELECT 'hola2','hh2' FROM DUAL WHERE NOT EXISTS (SELECT nombre FROM insumo WHERE nombre='hola2');
+select * from insumo;
+describe registro;
+describe comanda;
+select * from comanda;
+describe registro;
+select * from insumo;
+select * from registr;
+select * from registro;
+select * from insumo;
+use vitamedica
+use angeles;
+show tables;
+select * from comanda;
+use angeles;
+insert into gri(nombre)values(Medicamentos - Psicotrópicos); 
+insert into gri(nombre)values('Medicamentos - Psicotrópicos'); 
+select * from gri;
+delete from gri;
+alter table gri AUTO_INCREMENT=1;
+use angeles;
+select * from gri;
+select * from insumo;
+select * from registro;
+describe diagnostico;
+use angeles;
+select * from usuario;
+use angeles;
+describe diagnostico;
+use angeles;
+insert into diagnostico(descripcion, codigo_cie9)values('TRAUMATISMO NACIMIENTO','767   '); 
+select * from diagnostico;
+select * from diasgnostico where codigo_cie9='767';
+select * from diagnostico where codigo_cie9='767';
+delete from diagnostico;
+select * from gri limit 1;
+use angeles;
+select * from diagnostico;
+ALTER TABLE diagnostico AUTO_INCREMENT=1;
+select * from diagnostico;
+ALTER TABLE diagnostico AUTO_INCREMENT=1;
+select * from diagnostico;
+use angeles;
+select * from diagnostico;
+delete from diagnostico;
+alter table diagnostico AUTO_INCREMENT=1;
+use angeles;
+select * from diagnostico;
+alter table diagnostico AUTO_INCREMENT=1;
+use angeles;
+select * from diagnostico;
+delete from diagnostico;
+alter table diagnostico AUTO_INCREMENT=1;
+show create table diagnostico;
+use angeles;
+insert into diagnostico(descripcion, codigo_cie9)values('FALLO RENAL CRONICO','585   '); 
+insert into diagnostico(descripcion, codigo_cie9)values('NEOPLASIA MALIGNA MAMA FEMENINA','174   ');
+alter table diagnostico AUTO_INCREMENT=1;
+insert into diagnostico(descripcion, codigo_cie9)values('NEOPLASIA MALIGNA MAMA FEMENINA','174   ');
+show tables;
+use angeles;
+show create table disgnostico_comanda;
+show create table diagnostico_comanda;
+drop table diagnostico_comanda;
+drop table diagnostico;
+CREATE TABLE IF NOT EXISTS `angeles`.`diagnostico` (
+  `iddiagnostico` INT NOT NULL,
+  `descripcion` VARCHAR(140) NULL,
+  `codigo_cie9` VARCHAR(10) NULL,
+  `codigo_cie10` VARCHAR(8) NULL,
+  PRIMARY KEY (`iddiagnostico`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1;
+CREATE TABLE IF NOT EXISTS `angeles`.`diagnostico` (   `iddiagnostico` INT NOT NULL,   `descripcion` VARCHAR(140) NULL,   `codigo_cie9` VARCHAR(10) NULL,   `codigo_cie10` VARCHAR(8) NULL,   PRIMARY KEY (`iddiagnostico`)) ENGINE = InnoDB AUTO_INCREMENT = 1;
+CREATE TABLE IF NOT EXISTS `angeles`.`diagnostico_comanda` (
+  `iddiagnosticocomanda` INT NOT NULL,
+  `status_comanda_idstatus_comanda` INT(11) NOT NULL,
+  `usuario_idusuario` INT(11) NOT NULL,
+  `diagnostico_iddiagnostico` INT NOT NULL,
+  `comanda_idcomanda` INT(11) NOT NULL,
+  PRIMARY KEY (`iddiagnosticocomanda`, `status_comanda_idstatus_comanda`, `usuario_idusuario`, `diagnostico_iddiagnostico`, `comanda_idcomanda`),
+  INDEX `fk_diagnostico_comanda_status_comanda1_idx` (`status_comanda_idstatus_comanda` ASC),
+  INDEX `fk_diagnostico_comanda_usuario1_idx` (`usuario_idusuario` ASC),
+  INDEX `fk_diagnostico_comanda_diagnostico1_idx` (`diagnostico_iddiagnostico` ASC),
+  INDEX `fk_diagnostico_comanda_comanda1_idx` (`comanda_idcomanda` ASC),
+  CONSTRAINT `fk_diagnostico_comanda_status_comanda1`
+    FOREIGN KEY (`status_comanda_idstatus_comanda`)
+    REFERENCES `angeles`.`status_comanda` (`idstatus_comanda`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_diagnostico_comanda_usuario1`
+    FOREIGN KEY (`usuario_idusuario`)
+    REFERENCES `angeles`.`usuario` (`idusuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_diagnostico_comanda_diagnostico1`
+    FOREIGN KEY (`diagnostico_iddiagnostico`)
+    REFERENCES `angeles`.`diagnostico` (`iddiagnostico`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_diagnostico_comanda_comanda1`
+    FOREIGN KEY (`comanda_idcomanda`)
+    REFERENCES `angeles`.`comanda` (`idcomanda`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+CREATE TABLE IF NOT EXISTS `angeles`.`diagnostico_comanda` (   `iddiagnosticocomanda` INT NOT NULL,   `status_comanda_idstatus_comanda` INT(11) NOT NULL,   `usuario_idusuario` INT(11) NOT NULL,   `diagnostico_iddiagnostico` INT NOT NULL,   `comanda_idcomanda` INT(11) NOT NULL,   PRIMARY KEY (`iddiagnosticocomanda`, `status_comanda_idstatus_comanda`, `usuario_idusuario`, `diagnostico_iddiagnostico`, `comanda_idcomanda`),   INDEX `fk_diagnostico_comanda_status_comanda1_idx` (`status_comanda_idstatus_comanda` ASC),   INDEX `fk_diagnostico_comanda_usuario1_idx` (`usuario_idusuario` ASC),   INDEX `fk_diagnostico_comanda_diagnostico1_idx` (`diagnostico_iddiagnostico` ASC),   INDEX `fk_diagnostico_comanda_comanda1_idx` (`comanda_idcomanda` ASC),   CONSTRAINT `fk_diagnostico_comanda_status_comanda1`     FOREIGN KEY (`status_comanda_idstatus_comanda`)     REFERENCES `angeles`.`status_comanda` (`idstatus_comanda`)     ON DELETE NO ACTION     ON UPDATE NO ACTION,   CONSTRAINT `fk_diagnostico_comanda_usuario1`     FOREIGN KEY (`usuario_idusuario`)     REFERENCES `angeles`.`usuario` (`idusuario`)     ON DELETE NO ACTION     ON UPDATE NO ACTION,   CONSTRAINT `fk_diagnostico_comanda_diagnostico1`     FOREIGN KEY (`diagnostico_iddiagnostico`)     REFERENCES `angeles`.`diagnostico` (`iddiagnostico`)     ON DELETE NO ACTION     ON UPDATE NO ACTION,   CONSTRAINT `fk_diagnostico_comanda_comanda1`     FOREIGN KEY (`comanda_idcomanda`)     REFERENCES `angeles`.`comanda` (`idcomanda`)     ON DELETE NO ACTION     ON UPDATE NO ACTION) ENGINE = InnoDB;
+use angeles;
+drop table diagnostico_comanda;
+drop table diagnostico;
+CREATE TABLE IF NOT EXISTS `angeles`.`diagnostico` (
+  `iddiagnostico` INT NOT NULL,
+  `descripcion` VARCHAR(140) NULL,
+  `codigo_cie9` VARCHAR(10) NULL,
+  `codigo_cie10` VARCHAR(8) NULL,
+  PRIMARY KEY (`iddiagnostico`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1;
+CREATE TABLE IF NOT EXISTS `angeles`.`diagnostico` (   `iddiagnostico` INT NOT NULL,   `descripcion` VARCHAR(140) NULL,   `codigo_cie9` VARCHAR(10) NULL,   `codigo_cie10` VARCHAR(8) NULL,   PRIMARY KEY (`iddiagnostico`)) ENGINE = InnoDB AUTO_INCREMENT = 1;
+use angeles;
+CREATE TABLE IF NOT EXISTS `angeles`.`diagnostico` (
+  `iddiagnostico` INT NOT NULL AUTO_INCREMENT;
+CREATE TABLE IF NOT EXISTS `angeles`.`diagnostico` (   `iddiagnostico` INT NOT NULL AUTO_INCREMENT;
+  `descripcion` VARCHAR(140) NULL,
+  `codigo_cie9` VARCHAR(10) NULL,
+  `codigo_cie10` VARCHAR(8) NULL,
+  PRIMARY KEY (`iddiagnostico`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1;
+`descripcion` VARCHAR(140) NULL,   `codigo_cie9` VARCHAR(10) NULL,   `codigo_cie10` VARCHAR(8) NULL,   PRIMARY KEY (`iddiagnostico`)) ENGINE = InnoDB AUTO_INCREMENT = 1;
+CREATE TABLE IF NOT EXISTS `angeles`.`diagnostico` (
+  `iddiagnostico` INT NOT NULL AUTO_INCREMENT,
+  `descripcion` VARCHAR(140) NULL,
+  `codigo_cie9` VARCHAR(10) NULL,
+  `codigo_cie10` VARCHAR(8) NULL,
+  PRIMARY KEY (`iddiagnostico`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1;
+CREATE TABLE IF NOT EXISTS `angeles`.`diagnostico` (   `iddiagnostico` INT NOT NULL AUTO_INCREMENT,   `descripcion` VARCHAR(140) NULL,   `codigo_cie9` VARCHAR(10) NULL,   `codigo_cie10` VARCHAR(8) NULL,   PRIMARY KEY (`iddiagnostico`)) ENGINE = InnoDB AUTO_INCREMENT = 1;
+show tables;
+use angeles;
+show tables;
+show table diagnostico;
+show create table diagnostico;
+use angeles;
+drop table disgnostico;
+drop table diagnostico;
+CREATE TABLE IF NOT EXISTS `angeles`.`diagnostico` (
+  `iddiagnostico` INT NOT NULL AUTO_INCREMENT,
+  `descripcion` VARCHAR(140) NULL,
+  `codigo_cie9` VARCHAR(10) NULL,
+  `codigo_cie10` VARCHAR(8) NULL,
+  PRIMARY KEY (`iddiagnostico`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 1;
+CREATE TABLE IF NOT EXISTS `angeles`.`diagnostico` (   `iddiagnostico` INT NOT NULL AUTO_INCREMENT,   `descripcion` VARCHAR(140) NULL,   `codigo_cie9` VARCHAR(10) NULL,   `codigo_cie10` VARCHAR(8) NULL,   PRIMARY KEY (`iddiagnostico`)) ENGINE = InnoDB AUTO_INCREMENT = 1;
+SHOW CREATE TABLE diagnostico;
+use angeles;
+select count(*) from diagnostico;
+delete from diagnostico;
+alter table diagnostico AUTO_INCREMENT=1;
+use angeles;
+select count(*) from diagnostico;
+delete from diagnostico;
+alter table diagnostico AUTO_INCREMENT=1;
+use angeles;
+select * from comanda;
+describe comanda;
+describe comanda_dianostico;
+describe comanda_diagnostico;
+show tables;
+describe diagnostico_comanda;
+select count(*) from diagnostico;
+select count(*) from gri;
+select * from registro;
+ç
+describe registro;
+use angeles;
+describe registro;
+select * from registro;
+use angeles;
+exitr
+\c
+exitr 
+use angeles;
+alter table registro AUTO_INCREMENT=1;
+select * from comanda;
+alter table registro AUTO_INCREMENT=1;
+select * from insumo;
+insert into registro(comanda_idcomanda,insum_idinsumo,fecha_inicio,fecha_fin,cantidad,unidad,importe, repeticiones) values(11,102,'10.02.17','20.0    5.17','1','cajas',100.50,1); 
+~                                  
+\c
+~                                    
+select * from registro;
+insert into registro(comanda_idcomanda,insum_idinsumo,fecha_inicio,fecha_fin,cantidad,unidad,importe, repeticiones) values(11,102,'10.02.17','20.05.17','1','cajas',100.50,1); 
+delete from registro;
+alter table registro AUTO_INCREMENT=1;
+insert into registro(comanda_idcomanda,insum_idinsumo,fecha_inicio,fecha_fin,cantidad,unidad,importe, repeticiones) values(11,102,'10.02.17','20.05.17','1','cajas',100.50,1); 
+SELECT  * from registro;
+insert into registro(comanda_idcomanda,insum_idinsumo,fecha_inicio,fecha_fin,cantidad,unidad,importe, repeticiones) values(11,103,'10.02.17','20.05.17','1','cajas',200.99,1); 
+insert into registro(comanda_idcomanda,insum_idinsumo,fecha_inicio,fecha_fin,cantidad,unidad,importe, repeticiones) values(12,102,'10.02.17','20.05.17','1','cajas',700.99,1); 
+select * from registro;
+show create table diagnostico_comanda;
+use angeles;
+show create table diagnostico_comanda;
+select * from diagnostico_comanda;
+alter table diagnostico_comanda AUTO_INCREMENT=1;
+DROP table diagnostico_comanda;
+CREATE TABLE IF NOT EXISTS `angeles`.`diagnostico_comanda` (
+  `iddiagnosticocomanda` INT NOT NULL AUTO_INCREMENT,
+  `status_comanda_idstatus_comanda` INT(11) NOT NULL,
+  `usuario_idusuario` INT(11) NOT NULL,
+  `diagnostico_iddiagnostico` INT NOT NULL,
+  `comanda_idcomanda` INT(11) NOT NULL,
+  PRIMARY KEY (`iddiagnosticocomanda`, `status_comanda_idstatus_comanda`, `usuario_idusuario`, `diagnostico_iddiagnostico`, `comanda_idcomanda`),
+  INDEX `fk_diagnostico_comanda_status_comanda1_idx` (`status_comanda_idstatus_comanda` ASC),
+  INDEX `fk_diagnostico_comanda_usuario1_idx` (`usuario_idusuario` ASC),
+  INDEX `fk_diagnostico_comanda_diagnostico1_idx` (`diagnostico_iddiagnostico` ASC),
+  INDEX `fk_diagnostico_comanda_comanda1_idx` (`comanda_idcomanda` ASC),
+  CONSTRAINT `fk_diagnostico_comanda_status_comanda1`
+    FOREIGN KEY (`status_comanda_idstatus_comanda`)
+    REFERENCES `angeles`.`status_comanda` (`idstatus_comanda`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_diagnostico_comanda_usuario1`
+    FOREIGN KEY (`usuario_idusuario`)
+    REFERENCES `angeles`.`usuario` (`idusuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_diagnostico_comanda_diagnostico1`
+    FOREIGN KEY (`diagnostico_iddiagnostico`)
+    REFERENCES `angeles`.`diagnostico` (`iddiagnostico`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_diagnostico_comanda_comanda1`
+    FOREIGN KEY (`comanda_idcomanda`)
+    REFERENCES `angeles`.`comanda` (`idcomanda`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 1;
+CREATE TABLE IF NOT EXISTS `angeles`.`diagnostico_comanda` (   `iddiagnosticocomanda` INT NOT NULL AUTO_INCREMENT,   `status_comanda_idstatus_comanda` INT(11) NOT NULL,   `usuario_idusuario` INT(11) NOT NULL,   `diagnostico_iddiagnostico` INT NOT NULL,   `comanda_idcomanda` INT(11) NOT NULL,   PRIMARY KEY (`iddiagnosticocomanda`, `status_comanda_idstatus_comanda`, `usuario_idusuario`, `diagnostico_iddiagnostico`, `comanda_idcomanda`),   INDEX `fk_diagnostico_comanda_status_comanda1_idx` (`status_comanda_idstatus_comanda` ASC),   INDEX `fk_diagnostico_comanda_usuario1_idx` (`usuario_idusuario` ASC),   INDEX `fk_diagnostico_comanda_diagnostico1_idx` (`diagnostico_iddiagnostico` ASC),   INDEX `fk_diagnostico_comanda_comanda1_idx` (`comanda_idcomanda` ASC),   CONSTRAINT `fk_diagnostico_comanda_status_comanda1`     FOREIGN KEY (`status_comanda_idstatus_comanda`)     REFERENCES `angeles`.`status_comanda` (`idstatus_comanda`)     ON DELETE NO ACTION     ON UPDATE NO ACTION,   CONSTRAINT `fk_diagnostico_comanda_usuario1`     FOREIGN KEY (`usuario_idusuario`)     REFERENCES `angeles`.`usuario` (`idusuario`)     ON DELETE NO ACTION     ON UPDATE NO ACTION,   CONSTRAINT `fk_diagnostico_comanda_diagnostico1`     FOREIGN KEY (`diagnostico_iddiagnostico`)     REFERENCES `angeles`.`diagnostico` (`iddiagnostico`)     ON DELETE NO ACTION     ON UPDATE NO ACTION,   CONSTRAINT `fk_diagnostico_comanda_comanda1`     FOREIGN KEY (`comanda_idcomanda`)     REFERENCES `angeles`.`comanda` (`idcomanda`)     ON DELETE NO ACTION     ON UPDATE NO ACTION) ENGINE = InnoDB AUTO_INCREMENT = 1;
+clear
+describe comanda
+;
+use angeles;
+select * from comanda;
+delete from comanda;
+describe comanda;
+insert into comanda (idepisodio,idpaciente) values('1000971318','4707865);
+insert into comanda (idepisodio,idpaciente) values('1000100268','4902212);
+insert into comanda (idepisodio,idpaciente) values('1000971318','4707865);
+insert into comanda (idepisodio,idpaciente) values('1000100268','4902212);
+insert into comanda (idepisodio,idpaciente) values('1000149084','4845912);
+insert into comanda (idepisodio,idpaciente) values('1001762544','4691388);
+insert into comanda (idepisodio,idpaciente) values('1000149084','4845912);
+insert into comanda (idepisodio,idpaciente) values('1001762544','4691388);
+insert into comanda (idepisodio,idpaciente) values('1001762544','4681883);
+insert into comanda (idepisodio,idpaciente) values('1000200639','4674208);
+insert into comanda (idepisodio,idpaciente) values('1001762544','4681883);
+insert into comanda (idepisodio,idpaciente) values('1000200639','4674208);
+insert into comanda (idepisodio,idpaciente) values('1000200639','4455049);
+insert into comanda (idepisodio,idpaciente) values('1000550354','4788981);
+insert into comanda (idepisodio,idpaciente) values('1000200639','4455049);
+insert into comanda (idepisodio,idpaciente) values('1000550354','4788981);
+insert into comanda (idepisodio,idpaciente) values('1000550354','4730604);
+insert into comanda (idepisodio,idpaciente) values('1000805528','4888266);
+insert into comanda (idepisodio,idpaciente) values('1000550354','4730604);
+insert into comanda (idepisodio,idpaciente) values('1000805528','4888266);
+insert into comanda (idepisodio,idpaciente) values('1000805528','4707777);
+insert into comanda (idepisodio,idpaciente) values('1001788760','4816610);
+insert into comanda (idepisodio,idpaciente) values('1000805528','4707777);
+insert into comanda (idepisodio,idpaciente) values('1001788760','4816610);
+insert into comanda (idepisodio,idpaciente) values('1000176906','4776606);
+insert into comanda (idepisodio,idpaciente) values('1000176906','4722671);
+insert into comanda (idepisodio,idpaciente) values('1000176906','4776606);
+insert into comanda (idepisodio,idpaciente) values('1000176906','4722671);
+insert into comanda (idepisodio,idpaciente) values('1001014388','4842916);
+insert into comanda (idepisodio,idpaciente) values('1001014388','4809188);
+insert into comanda (idepisodio,idpaciente) values('1001014388','4842916);
+insert into comanda (idepisodio,idpaciente) values('1001014388','4809188);
+insert into comanda (idepisodio,idpaciente) values('1001617444','4590139);
+insert into comanda (idepisodio,idpaciente) values('1000146171','4776305);
+insert into comanda (idepisodio,idpaciente) values('1001617444','4590139);
+insert into comanda (idepisodio,idpaciente) values('1000146171','4776305);
+insert into comanda (idepisodio,idpaciente) values('1000046473','4871829);
+insert into comanda (idepisodio,idpaciente) values('1000047908','4715489);
+insert into comanda (idepisodio,idpaciente) values('1000046473','4871829);
+insert into comanda (idepisodio,idpaciente) values('1000047908','4715489);
+insert into comanda (idepisodio,idpaciente) values('1000132890','4883334);
+insert into comanda (idepisodio,idpaciente) values('1000129384','4842229);
+insert into comanda (idepisodio,idpaciente) values('1000132890','4883334);
+insert into comanda (idepisodio,idpaciente) values('1000129384','4842229);
+insert into comanda (idepisodio,idpaciente) values('1000121515','4813106);
+insert into comanda (idepisodio,idpaciente) values('1000037010','4908577);
+insert into comanda (idepisodio,idpaciente) values('1000121515','4813106);
+insert into comanda (idepisodio,idpaciente) values('1000037010','4908577);
+insert into comanda (idepisodio,idpaciente) values('1000329396','4700190);
+insert into comanda (idepisodio,idpaciente) values('1000113392','4776023);
+insert into comanda (idepisodio,idpaciente) values('1000329396','4700190);
+insert into comanda (idepisodio,idpaciente) values('1000113392','4776023);
+insert into comanda (idepisodio,idpaciente) values('1000282337','4908813);
+insert into comanda (idepisodio,idpaciente) values('1000116045','4767420);
+insert into comanda (idepisodio,idpaciente) values('1000282337','4908813);
+insert into comanda (idepisodio,idpaciente) values('1000116045','4767420);
+insert into comanda (idepisodio,idpaciente) values('1000427788','4831882);
+insert into comanda (idepisodio,idpaciente) values('1000482124','4633879);
+insert into comanda (idepisodio,idpaciente) values('1000427788','4831882);
+insert into comanda (idepisodio,idpaciente) values('1000482124','4633879);
+insert into comanda (idepisodio,idpaciente) values('1000498958','4773298);
+insert into comanda (idepisodio,idpaciente) values('1000137311','4779035);
+insert into comanda (idepisodio,idpaciente) values('1000498958','4773298);
+insert into comanda (idepisodio,idpaciente) values('1000137311','4779035);
+insert into comanda (idepisodio,idpaciente) values('1000171871','4617274);
+insert into comanda (idepisodio,idpaciente) values('1000172209','4928242);
+insert into comanda (idepisodio,idpaciente) values('1000171871','4617274);
+insert into comanda (idepisodio,idpaciente) values('1000172209','4928242);
+insert into comanda (idepisodio,idpaciente) values('1000262048','4738797);
+insert into comanda (idepisodio,idpaciente) values('1000104066','4683149);
+insert into comanda (idepisodio,idpaciente) values('1000262048','4738797);
+insert into comanda (idepisodio,idpaciente) values('1000104066','4683149);
+insert into comanda (idepisodio,idpaciente) values('1000100882','4706839);
+insert into comanda (idepisodio,idpaciente) values('1000238399','4592010);
+insert into comanda (idepisodio,idpaciente) values('1000100882','4706839);
+insert into comanda (idepisodio,idpaciente) values('1000238399','4592010);
+insert into comanda (idepisodio,idpaciente) values('1000097531','4554680);
+insert into comanda (idepisodio,idpaciente) values('1000225398','4704777);
+insert into comanda (idepisodio,idpaciente) values('1000097531','4554680);
+insert into comanda (idepisodio,idpaciente) values('1000225398','4704777);
+insert into comanda (idepisodio,idpaciente) values('1000726107','4794595);
+insert into comanda (idepisodio,idpaciente) values('1000254626','4794097);
+insert into comanda (idepisodio,idpaciente) values('1000726107','4794595);
+insert into comanda (idepisodio,idpaciente) values('1000254626','4794097);
+insert into comanda (idepisodio,idpaciente) values('1000832343','4812620);
+insert into comanda (idepisodio,idpaciente) values('1000279752','4700045);
+insert into comanda (idepisodio,idpaciente) values('1000832343','4812620);
+insert into comanda (idepisodio,idpaciente) values('1000279752','4700045);
+insert into comanda (idepisodio,idpaciente) values('1000871855','4708092);
+insert into comanda (idepisodio,idpaciente) values('1000322876','4698755);
+insert into comanda (idepisodio,idpaciente) values('1000871855','4708092);
+insert into comanda (idepisodio,idpaciente) values('1000322876','4698755);
+insert into comanda (idepisodio,idpaciente) values('1000919159','4708948);
+insert into comanda (idepisodio,idpaciente) values('1000330163','4671086);
+insert into comanda (idepisodio,idpaciente) values('1000919159','4708948);
+insert into comanda (idepisodio,idpaciente) values('1000330163','4671086);
+insert into comanda (idepisodio,idpaciente) values('1000356775','4892744);
+insert into comanda (idepisodio,idpaciente) values('1000424189','4767218);
+insert into comanda (idepisodio,idpaciente) values('1000356775','4892744);
+insert into comanda (idepisodio,idpaciente) values('1000424189','4767218);
+insert into comanda (idepisodio,idpaciente) values('1001147898','4689883);
+insert into comanda (idepisodio,idpaciente) values('1000459865','4785191);
+insert into comanda (idepisodio,idpaciente) values('1001147898','4689883);
+insert into comanda (idepisodio,idpaciente) values('1000459865','4785191);
+insert into comanda (idepisodio,idpaciente) values('1001290895','4851306);
+insert into comanda (idepisodio,idpaciente) values('1000489352','4880918);
+insert into comanda (idepisodio,idpaciente) values('1001290895','4851306);
+insert into comanda (idepisodio,idpaciente) values('1000489352','4880918);
+insert into comanda (idepisodio,idpaciente) values('1001413853','4913284);
+insert into comanda (idepisodio,idpaciente) values('1000511375','4840144);
+insert into comanda (idepisodio,idpaciente) values('1001413853','4913284);
+insert into comanda (idepisodio,idpaciente) values('1000511375','4840144);
+insert into comanda (idepisodio,idpaciente) values('1000537335','4911360);
+insert into comanda (idepisodio,idpaciente) values('1000548880','4578288);
+insert into comanda (idepisodio,idpaciente) values('1000537335','4911360);
+insert into comanda (idepisodio,idpaciente) values('1000548880','4578288);
+insert into comanda (idepisodio,idpaciente) values('1001724460','4731369);
+insert into comanda (idepisodio,idpaciente) values('1000575757','4729414);
+insert into comanda (idepisodio,idpaciente) values('1001724460','4731369);
+insert into comanda (idepisodio,idpaciente) values('1000575757','4729414);
+insert into comanda (idepisodio,idpaciente) values('1000578143','4647557);
+insert into comanda (idepisodio,idpaciente) values('1000582429','4897851);
+insert into comanda (idepisodio,idpaciente) values('1000578143','4647557);
+insert into comanda (idepisodio,idpaciente) values('1000582429','4897851);
+insert into comanda (idepisodio,idpaciente) values('1000588474','4794562);
+insert into comanda (idepisodio,idpaciente) values('1000624446','4846548);
+insert into comanda (idepisodio,idpaciente) values('1000588474','4794562);
+insert into comanda (idepisodio,idpaciente) values('1000624446','4846548);
+insert into comanda (idepisodio,idpaciente) values('1000625561','4841429);
+insert into comanda (idepisodio,idpaciente) values('1000219627','4755229);
+insert into comanda (idepisodio,idpaciente) values('1000625561','4841429);
+insert into comanda (idepisodio,idpaciente) values('1000219627','4755229);
+insert into comanda (idepisodio,idpaciente) values('1000076276','4881692);
+insert into comanda (idepisodio,idpaciente) values('1000684568','4833775);
+insert into comanda (idepisodio,idpaciente) values('1000076276','4881692);
+insert into comanda (idepisodio,idpaciente) values('1000684568','4833775);
+insert into comanda (idepisodio,idpaciente) values('1000208119','4848037);
+insert into comanda (idepisodio,idpaciente) values('1000683205','4776183);
+insert into comanda (idepisodio,idpaciente) values('1000208119','4848037);
+insert into comanda (idepisodio,idpaciente) values('1000683205','4776183);
+insert into comanda (idepisodio,idpaciente) values('1000679770','4761694);
+insert into comanda (idepisodio,idpaciente) values('1000180466','4571573);
+insert into comanda (idepisodio,idpaciente) values('1000679770','4761694);
+insert into comanda (idepisodio,idpaciente) values('1000180466','4571573);
+insert into comanda (idepisodio,idpaciente) values('1000709056','4611246);
+insert into comanda (idepisodio,idpaciente) values('1000676147','4893545);
+insert into comanda (idepisodio,idpaciente) values('1000709056','4611246);
+insert into comanda (idepisodio,idpaciente) values('1000676147','4893545);
+insert into comanda (idepisodio,idpaciente) values('1000739631','4743389);
+insert into comanda (idepisodio,idpaciente) values('1000756469','4776266);
+insert into comanda (idepisodio,idpaciente) values('1000739631','4743389);
+insert into comanda (idepisodio,idpaciente) values('1000756469','4776266);
+insert into comanda (idepisodio,idpaciente) values('1000784087','4667434);
+insert into comanda (idepisodio,idpaciente) values('1000786016','4883242);
+insert into comanda (idepisodio,idpaciente) values('1000784087','4667434);
+insert into comanda (idepisodio,idpaciente) values('1000786016','4883242);
+insert into comanda (idepisodio,idpaciente) values('1000811326','4705789);
+insert into comanda (idepisodio,idpaciente) values('1000816192','4890143);
+insert into comanda (idepisodio,idpaciente) values('1000811326','4705789);
+insert into comanda (idepisodio,idpaciente) values('1000816192','4890143);
+insert into comanda (idepisodio,idpaciente) values('1000820590','4754768);
+insert into comanda (idepisodio,idpaciente) values('1000670609','4799165);
+insert into comanda (idepisodio,idpaciente) values('1000820590','4754768);
+insert into comanda (idepisodio,idpaciente) values('1000670609','4799165);
+insert into comanda (idepisodio,idpaciente) values('1000850336','4662825);
+insert into comanda (idepisodio,idpaciente) values('1000851065','4924294);
+insert into comanda (idepisodio,idpaciente) values('1000850336','4662825);
+insert into comanda (idepisodio,idpaciente) values('1000851065','4924294);
+insert into comanda (idepisodio,idpaciente) values('1000860532','4888596);
+insert into comanda (idepisodio,idpaciente) values('1000656612','4671913);
+insert into comanda (idepisodio,idpaciente) values('1000860532','4888596);
+insert into comanda (idepisodio,idpaciente) values('1000656612','4671913);
+insert into comanda (idepisodio,idpaciente) values('1000876705','4769963);
+insert into comanda (idepisodio,idpaciente) values('1000908599','4873763);
+insert into comanda (idepisodio,idpaciente) values('1000876705','4769963);
+insert into comanda (idepisodio,idpaciente) values('1000908599','4873763);
+insert into comanda (idepisodio,idpaciente) values('1000633668','4776000);
+insert into comanda (idepisodio,idpaciente) values('1000966809','4757450);
+insert into comanda (idepisodio,idpaciente) values('1000633668','4776000);
+insert into comanda (idepisodio,idpaciente) values('1000966809','4757450);
+insert into comanda (idepisodio,idpaciente) values('1000971636','4730743);
+insert into comanda (idepisodio,idpaciente) values('1001029961','4607868);
+insert into comanda (idepisodio,idpaciente) values('1000971636','4730743);
+insert into comanda (idepisodio,idpaciente) values('1001029961','4607868);
+insert into comanda (idepisodio,idpaciente) values('1001044168','4666126);
+insert into comanda (idepisodio,idpaciente) values('1001072509','4853666);
+insert into comanda (idepisodio,idpaciente) values('1001044168','4666126);
+insert into comanda (idepisodio,idpaciente) values('1001072509','4853666);
+insert into comanda (idepisodio,idpaciente) values('1001076396','4823781);
+insert into comanda (idepisodio,idpaciente) values('1001109065','4899411);
+insert into comanda (idepisodio,idpaciente) values('1001076396','4823781);
+insert into comanda (idepisodio,idpaciente) values('1001109065','4899411);
+insert into comanda (idepisodio,idpaciente) values('1001179812','4670021);
+insert into comanda (idepisodio,idpaciente) values('1001197929','4632045);
+insert into comanda (idepisodio,idpaciente) values('1001179812','4670021);
+insert into comanda (idepisodio,idpaciente) values('1001197929','4632045);
+insert into comanda (idepisodio,idpaciente) values('1001273618','4788955);
+insert into comanda (idepisodio,idpaciente) values('1000174047','4702983);
+insert into comanda (idepisodio,idpaciente) values('1001273618','4788955);
+insert into comanda (idepisodio,idpaciente) values('1000174047','4702983);
+insert into comanda (idepisodio,idpaciente) values('1001338826','4603167);
+insert into comanda (idepisodio,idpaciente) values('1001390805','4543465);
+insert into comanda (idepisodio,idpaciente) values('1001338826','4603167);
+insert into comanda (idepisodio,idpaciente) values('1001390805','4543465);
+insert into comanda (idepisodio,idpaciente) values('1000071795','4664051);
+insert into comanda (idepisodio,idpaciente) values('1001421878','4640401);
+insert into comanda (idepisodio,idpaciente) values('1000071795','4664051);
+insert into comanda (idepisodio,idpaciente) values('1001421878','4640401);
+insert into comanda (idepisodio,idpaciente) values('1001492365','4766289);
+insert into comanda (idepisodio,idpaciente) values('1001534776','4884751);
+insert into comanda (idepisodio,idpaciente) values('1001492365','4766289);
+insert into comanda (idepisodio,idpaciente) values('1001534776','4884751);
+insert into comanda (idepisodio,idpaciente) values('1001600984','4792484);
+insert into comanda (idepisodio,idpaciente) values('1001603912','4738808);
+insert into comanda (idepisodio,idpaciente) values('1001600984','4792484);
+insert into comanda (idepisodio,idpaciente) values('1001603912','4738808);
+insert into comanda (idepisodio,idpaciente) values('1001637016','4958299);
+insert into comanda (idepisodio,idpaciente) values('1001715955','4602419);
+insert into comanda (idepisodio,idpaciente) values('1001637016','4958299);
+insert into comanda (idepisodio,idpaciente) values('1001715955','4602419);
+insert into comanda (idepisodio,idpaciente) values('1000070147','4812765);
+insert into comanda (idepisodio,idpaciente) values('1001750567','4644804);
+insert into comanda (idepisodio,idpaciente) values('1000070147','4812765);
+insert into comanda (idepisodio,idpaciente) values('1001750567','4644804);
+insert into comanda (idepisodio,idpaciente) values('1001755120','4658060);
+insert into comanda (idepisodio,idpaciente) values('1001783151','4749124);
+insert into comanda (idepisodio,idpaciente) values('1001755120','4658060);
+insert into comanda (idepisodio,idpaciente) values('1001783151','4749124);
+insert into comanda (idepisodio,idpaciente) values('1001785878','4778753);
+insert into comanda (idepisodio,idpaciente) values('1001786380','4760456);
+insert into comanda (idepisodio,idpaciente) values('1001785878','4778753);
+insert into comanda (idepisodio,idpaciente) values('1001786380','4760456);
+insert into comanda (idepisodio,idpaciente) values('1001791795','4778211);
+insert into comanda (idepisodio,idpaciente) values('1001794979','4788667);
+insert into comanda (idepisodio,idpaciente) values('1001791795','4778211);
+insert into comanda (idepisodio,idpaciente) values('1001794979','4788667);
+insert into comanda (idepisodio,idpaciente) values('1001800766','4807691);
+insert into comanda (idepisodio,idpaciente) values('1001816217','4860321);
+insert into comanda (idepisodio,idpaciente) values('1001800766','4807691);
+insert into comanda (idepisodio,idpaciente) values('1001816217','4860321);
+insert into comanda (idepisodio,idpaciente) values('1001827798','4901434);
+insert into comanda (idepisodio,idpaciente) values('1000033490','4788141);
+insert into comanda (idepisodio,idpaciente) values('1001827798','4901434);
+insert into comanda (idepisodio,idpaciente) values('1000033490','4788141);
+seletc * from comanda;
+select * from comanda;
+insert into comanda (idepisodio,idpaciente) values ('1001421878','4640401);
+use angeles;
+select * from comanda;
+insert into comanda (idepisodio,idpaciente) values('1000971318','4707865');
+insert into comanda (idepisodio,idpaciente) values('1000100268','4902212');
+insert into comanda (idepisodio,idpaciente) values('1000149084','4845912');
+insert into comanda (idepisodio,idpaciente) values('1001762544','4691388');
+insert into comanda (idepisodio,idpaciente) values('1001762544','4681883');
+insert into comanda (idepisodio,idpaciente) values('1000200639','4674208');
+insert into comanda (idepisodio,idpaciente) values('1000200639','4455049');
+insert into comanda (idepisodio,idpaciente) values('1000550354','4788981');
+insert into comanda (idepisodio,idpaciente) values('1000550354','4730604');
+insert into comanda (idepisodio,idpaciente) values('1000805528','4888266');
+insert into comanda (idepisodio,idpaciente) values('1000805528','4707777');
+insert into comanda (idepisodio,idpaciente) values('1001788760','4816610');
+insert into comanda (idepisodio,idpaciente) values('1000176906','4776606');
+insert into comanda (idepisodio,idpaciente) values('1000176906','4722671');
+insert into comanda (idepisodio,idpaciente) values('1001014388','4842916');
+insert into comanda (idepisodio,idpaciente) values('1001014388','4809188');
+insert into comanda (idepisodio,idpaciente) values('1001617444','4590139');
+insert into comanda (idepisodio,idpaciente) values('1000146171','4776305');
+insert into comanda (idepisodio,idpaciente) values('1000046473','4871829');
+insert into comanda (idepisodio,idpaciente) values('1000047908','4715489');
+insert into comanda (idepisodio,idpaciente) values('1000132890','4883334');
+insert into comanda (idepisodio,idpaciente) values('1000129384','4842229');
+insert into comanda (idepisodio,idpaciente) values('1000121515','4813106');
+insert into comanda (idepisodio,idpaciente) values('1000037010','4908577');
+insert into comanda (idepisodio,idpaciente) values('1000329396','4700190');
+insert into comanda (idepisodio,idpaciente) values('1000113392','4776023');
+insert into comanda (idepisodio,idpaciente) values('1000282337','4908813');
+insert into comanda (idepisodio,idpaciente) values('1000116045','4767420');
+insert into comanda (idepisodio,idpaciente) values('1000427788','4831882');
+insert into comanda (idepisodio,idpaciente) values('1000482124','4633879');
+insert into comanda (idepisodio,idpaciente) values('1000498958','4773298');
+insert into comanda (idepisodio,idpaciente) values('1000137311','4779035');
+insert into comanda (idepisodio,idpaciente) values('1000171871','4617274');
+insert into comanda (idepisodio,idpaciente) values('1000172209','4928242');
+insert into comanda (idepisodio,idpaciente) values('1000262048','4738797');
+insert into comanda (idepisodio,idpaciente) values('1000104066','4683149');
+insert into comanda (idepisodio,idpaciente) values('1000100882','4706839');
+insert into comanda (idepisodio,idpaciente) values('1000238399','4592010');
+insert into comanda (idepisodio,idpaciente) values('1000097531','4554680');
+insert into comanda (idepisodio,idpaciente) values('1000225398','4704777');
+insert into comanda (idepisodio,idpaciente) values('1000726107','4794595');
+insert into comanda (idepisodio,idpaciente) values('1000254626','4794097');
+insert into comanda (idepisodio,idpaciente) values('1000832343','4812620');
+insert into comanda (idepisodio,idpaciente) values('1000279752','4700045');
+insert into comanda (idepisodio,idpaciente) values('1000871855','4708092');
+insert into comanda (idepisodio,idpaciente) values('1000322876','4698755');
+insert into comanda (idepisodio,idpaciente) values('1000919159','4708948');
+insert into comanda (idepisodio,idpaciente) values('1000330163','4671086');
+insert into comanda (idepisodio,idpaciente) values('1000356775','4892744');
+insert into comanda (idepisodio,idpaciente) values('1000424189','4767218');
+insert into comanda (idepisodio,idpaciente) values('1001147898','4689883');
+insert into comanda (idepisodio,idpaciente) values('1000459865','4785191');
+insert into comanda (idepisodio,idpaciente) values('1001290895','4851306');
+insert into comanda (idepisodio,idpaciente) values('1000489352','4880918');
+insert into comanda (idepisodio,idpaciente) values('1001413853','4913284');
+insert into comanda (idepisodio,idpaciente) values('1000511375','4840144');
+insert into comanda (idepisodio,idpaciente) values('1000537335','4911360');
+insert into comanda (idepisodio,idpaciente) values('1000548880','4578288');
+insert into comanda (idepisodio,idpaciente) values('1001724460','4731369');
+insert into comanda (idepisodio,idpaciente) values('1000575757','4729414');
+insert into comanda (idepisodio,idpaciente) values('1000578143','4647557');
+insert into comanda (idepisodio,idpaciente) values('1000582429','4897851');
+insert into comanda (idepisodio,idpaciente) values('1000588474','4794562');
+insert into comanda (idepisodio,idpaciente) values('1000624446','4846548');
+insert into comanda (idepisodio,idpaciente) values('1000625561','4841429');
+insert into comanda (idepisodio,idpaciente) values('1000219627','4755229');
+insert into comanda (idepisodio,idpaciente) values('1000076276','4881692');
+insert into comanda (idepisodio,idpaciente) values('1000684568','4833775');
+insert into comanda (idepisodio,idpaciente) values('1000208119','4848037');
+insert into comanda (idepisodio,idpaciente) values('1000683205','4776183');
+insert into comanda (idepisodio,idpaciente) values('1000679770','4761694');
+insert into comanda (idepisodio,idpaciente) values('1000180466','4571573');
+insert into comanda (idepisodio,idpaciente) values('1000709056','4611246');
+insert into comanda (idepisodio,idpaciente) values('1000676147','4893545');
+insert into comanda (idepisodio,idpaciente) values('1000739631','4743389');
+insert into comanda (idepisodio,idpaciente) values('1000756469','4776266');
+insert into comanda (idepisodio,idpaciente) values('1000784087','4667434');
+insert into comanda (idepisodio,idpaciente) values('1000786016','4883242');
+insert into comanda (idepisodio,idpaciente) values('1000811326','4705789');
+insert into comanda (idepisodio,idpaciente) values('1000816192','4890143');
+insert into comanda (idepisodio,idpaciente) values('1000820590','4754768');
+insert into comanda (idepisodio,idpaciente) values('1000670609','4799165');
+insert into comanda (idepisodio,idpaciente) values('1000850336','4662825');
+insert into comanda (idepisodio,idpaciente) values('1000851065','4924294');
+insert into comanda (idepisodio,idpaciente) values('1000860532','4888596');
+insert into comanda (idepisodio,idpaciente) values('1000656612','4671913');
+insert into comanda (idepisodio,idpaciente) values('1000876705','4769963');
+insert into comanda (idepisodio,idpaciente) values('1000908599','4873763');
+insert into comanda (idepisodio,idpaciente) values('1000633668','4776000');
+insert into comanda (idepisodio,idpaciente) values('1000966809','4757450');
+insert into comanda (idepisodio,idpaciente) values('1000971636','4730743');
+insert into comanda (idepisodio,idpaciente) values('1001029961','4607868');
+insert into comanda (idepisodio,idpaciente) values('1001044168','4666126');
+insert into comanda (idepisodio,idpaciente) values('1001072509','4853666');
+insert into comanda (idepisodio,idpaciente) values('1001076396','4823781');
+insert into comanda (idepisodio,idpaciente) values('1001109065','4899411');
+insert into comanda (idepisodio,idpaciente) values('1001179812','4670021');
+insert into comanda (idepisodio,idpaciente) values('1001197929','4632045');
+insert into comanda (idepisodio,idpaciente) values('1001273618','4788955');
+insert into comanda (idepisodio,idpaciente) values('1000174047','4702983');
+insert into comanda (idepisodio,idpaciente) values('1001338826','4603167');
+insert into comanda (idepisodio,idpaciente) values('1001390805','4543465');
+insert into comanda (idepisodio,idpaciente) values('1000071795','4664051');
+insert into comanda (idepisodio,idpaciente) values('1001421878','4640401');
+insert into comanda (idepisodio,idpaciente) values('1001492365','4766289');
+insert into comanda (idepisodio,idpaciente) values('1001534776','4884751');
+insert into comanda (idepisodio,idpaciente) values('1001600984','4792484');
+insert into comanda (idepisodio,idpaciente) values('1001603912','4738808');
+insert into comanda (idepisodio,idpaciente) values('1001637016','4958299');
+insert into comanda (idepisodio,idpaciente) values('1001715955','4602419');
+insert into comanda (idepisodio,idpaciente) values('1000070147','4812765');
+insert into comanda (idepisodio,idpaciente) values('1001750567','4644804');
+insert into comanda (idepisodio,idpaciente) values('1001755120','4658060');
+insert into comanda (idepisodio,idpaciente) values('1001783151','4749124');
+insert into comanda (idepisodio,idpaciente) values('1001785878','4778753');
+insert into comanda (idepisodio,idpaciente) values('1001786380','4760456');
+insert into comanda (idepisodio,idpaciente) values('1001791795','4778211');
+insert into comanda (idepisodio,idpaciente) values('1001794979','4788667');
+insert into comanda (idepisodio,idpaciente) values('1001800766','4807691');
+insert into comanda (idepisodio,idpaciente) values('1001816217','4860321');
+insert into comanda (idepisodio,idpaciente) values('1001827798','4901434');
+insert into comanda (idepisodio,idpaciente) values('1000033490','4788141');
+select * from comanda;
+select * from insumo;
+use angeles;
+show tables;
+select * from evaluacion;
+drop table evaluacion;
+CREATE TABLE IF NOT EXISTS `angeles`.`evaluacion` (
+  `idevaluacion` INT(11) NOT NULL AUTO_INCREMENT,
+  `insumo_idinsumo` INT(11) NOT NULL,
+  `gri_idgri` INT(11) NOT NULL,
+  `usuario_idusuario` INT(11) NOT NULL,
+  `fecha` DATE NULL DEFAULT NULL,
+  `incidencia` TINYINT(4) NULL DEFAULT NULL,
+  `extra` VARCHAR(100) NULL,
+  PRIMARY KEY (`idevaluacion`, `insumo_idinsumo`, `gri_idgri`, `usuario_idusuario`),
+  UNIQUE INDEX `idevaluacion_UNIQUE` (`idevaluacion` ASC),
+  INDEX `fk_evaluacion_insumo1_idx` (`insumo_idinsumo` ASC),
+  INDEX `fk_evaluacion_gri1_idx` (`gri_idgri` ASC),
+  INDEX `fk_evaluacion_usuario1_idx` (`usuario_idusuario` ASC),
+  CONSTRAINT `fk_evaluacion_gri1`
+    FOREIGN KEY (`gri_idgri`)
+    REFERENCES `angeles`.`gri` (`idgri`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_evaluacion_insumo1`
+    FOREIGN KEY (`insumo_idinsumo`)
+    REFERENCES `angeles`.`insumo` (`idinsumo`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_evaluacion_usuario1`
+    FOREIGN KEY (`usuario_idusuario`)
+    REFERENCES `angeles`.`usuario` (`idusuario`)
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB
+AUTO_INCREMENT = 1
+DEFAULT CHARACTER SET = latin1;
+CREATE TABLE IF NOT EXISTS `angeles`.`evaluacion` (   `idevaluacion` INT(11) NOT NULL AUTO_INCREMENT,   `insumo_idinsumo` INT(11) NOT NULL,   `gri_idgri` INT(11) NOT NULL,   `usuario_idusuario` INT(11) NOT NULL,   `fecha` DATE NULL DEFAULT NULL,   `incidencia` TINYINT(4) NULL DEFAULT NULL,   `extra` VARCHAR(100) NULL,   PRIMARY KEY (`idevaluacion`, `insumo_idinsumo`, `gri_idgri`, `usuario_idusuario`),   UNIQUE INDEX `idevaluacion_UNIQUE` (`idevaluacion` ASC),   INDEX `fk_evaluacion_insumo1_idx` (`insumo_idinsumo` ASC),   INDEX `fk_evaluacion_gri1_idx` (`gri_idgri` ASC),   INDEX `fk_evaluacion_usuario1_idx` (`usuario_idusuario` ASC),   CONSTRAINT `fk_evaluacion_gri1`     FOREIGN KEY (`gri_idgri`)     REFERENCES `angeles`.`gri` (`idgri`)     ON DELETE NO ACTION     ON UPDATE NO ACTION,   CONSTRAINT `fk_evaluacion_insumo1`     FOREIGN KEY (`insumo_idinsumo`)     REFERENCES `angeles`.`insumo` (`idinsumo`)     ON DELETE NO ACTION     ON UPDATE NO ACTION,   CONSTRAINT `fk_evaluacion_usuario1`     FOREIGN KEY (`usuario_idusuario`)     REFERENCES `angeles`.`usuario` (`idusuario`)     ON DELETE NO ACTION     ON UPDATE NO ACTION) ENGINE = InnoDB AUTO_INCREMENT = 1 DEFAULT CHARACTER SET = latin1;
+show tables;
+use angeles;
+select * fo comanda;
+select * from comanda;
+select * from diagnostico_comanda;
+use angeles;
+describe comanda;
+describe insumo;
+describe registro;
+describe comanda;
+select * from comanda;
+delete comanda;
+delete from comanda;
+select * from registro;
+delete * from registro;
+delete from registro;
+delete from insumo;
+delete from comanda;
+select * from usuario;
+describe comanda;
+delete from comanda;
+select * from insumo;
+select * from registro;
+select * from comanda;
+select * from diagnostico_comanda;
+delete from comanda;
+select * from diagnostico
+;
+select * from comanda;
+delete from comanda where idcomanda=19;
+delete from comanda where idcomanda in (11,12,13,14,15,16);
+delete from comanda where idcomanda in (select idcomanda from comanda);
+delete from comanda where idcomanda in (1,
+2,
+3,
+4,
+5,
+6,
+7,
+8,
+9,
+10,
+11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50,
+51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73,
+74,
+75,
+76,
+77,
+78,
+79,
+80,
+81,
+82,
+83,
+84,
+85,
+86,
+87,
+88,
+89,
+90,
+91,
+92,
+93,
+94,
+95,
+96,
+97,
+98,
+99,
+100,
+101,
+102,
+103,
+104,
+105,
+106,
+107,
+108,
+109,
+110,
+111,
+112,
+113,
+114,
+115,
+116,
+117,
+118,
+119,
+120,
+121,
+122,
+123,
+124,
+125,
+126,
+127,
+128,
+129,
+130,
+131,
+132,
+133,
+134,
+135,
+136,
+137,
+138,
+139,
+140,
+141,
+142,
+143,
+144,
+145,
+146,
+147,
+148,
+149,
+150,
+151,
+152,
+153,
+154,
+155,
+156,
+157,
+158,
+159,
+160,
+161,
+162,
+163,
+164,
+165,
+166,
+167,
+168,
+169,
+170,
+171,
+172,
+173,
+174,
+175,
+176,
+177,
+178,
+179,
+180,
+181,
+182,
+183,
+184,
+185,
+186,
+187,
+188,
+189,
+190,
+191,
+192,
+193,
+194,
+195,
+196,
+197,
+198,
+199,
+200,
+201,
+202,
+203,
+204,
+205,
+206,
+207,
+208,
+209,
+210,
+211,
+212,
+213,
+214,
+215,
+216,
+217,
+218,
+219,
+220,
+221,
+222,
+223,
+224,
+225,
+226,
+227,
+228,
+229,
+230,
+231,
+232,
+233,
+234,
+235,
+236,
+237,
+238,
+239,
+240,
+241,
+242,
+243,
+244,
+245,
+246,
+247,
+248,
+249,
+250,
+251,
+252,
+253,
+254,
+255,
+256,
+257,
+258);
+delete from comanda where idcomanda in (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258);
+select * from comanda;
+delete from comanda where idcomanda=255;
+delete from comanda where idcomanda(222,223,224);
+delete from comanda where idcomanda in (222,223,224);
+delete from comanda where idcomanda in (11,
+12,
+13,
+14,
+15,
+16,
+17,
+18,
+19,
+20,
+21,
+22,
+23,
+24,
+25,
+26,
+27,
+28,
+29,
+30,
+31,
+32,
+33,
+34,
+35,
+36,
+37,
+38,
+39,
+40,
+41,
+42,
+43,
+44,
+45,
+46,
+47,
+48,
+49,
+50);
+delete from comanda where idcomanda in (11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50);
+select * from comanda;
+(51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73,
+74,
+75,
+76,
+77,
+78,
+79,
+80,
+81,
+82,
+83,
+84,
+85,
+86,
+87,
+88,
+89,
+90,
+91,
+92,
+93,
+94,
+95,
+96,
+97,
+98,
+99,
+dele
+(51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100);
+delete from comanda where idcomanda in (51,
+52,
+53,
+54,
+55,
+56,
+57,
+58,
+59,
+60,
+61,
+62,
+63,
+64,
+65,
+66,
+67,
+68,
+69,
+70,
+71,
+72,
+73,
+74,
+75,
+76,
+77,
+78,
+79,
+80,
+81,
+82,
+83,
+84,
+85,
+86,
+87,
+88,
+89,
+90,
+91,
+92,
+93,
+94,
+95,
+96,
+97,
+98,
+99,
+100);
+delete from comanda where idcomanda in (51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100);
+select * from comanda
+;
+select * from comanda;
+delete from comanda where idcomanda in (220,
+221,
+222,
+223,
+224,
+225,
+226,
+227,
+228,
+229,
+230,
+231,
+232,
+233,
+234,
+235,
+236,
+237,
+238,
+239,
+240,
+241,
+242,
+243,
+244,
+245,
+246,
+247,
+248,
+249,
+250,
+251,
+252,
+253,
+254,
+255,
+256,
+257,
+258);
+delete from comanda where idcomanda in (220, 221, 222, 223, 224, 225, 226, 227, 228, 229, 230, 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242, 243, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 254, 255, 256, 257, 258);
+select * from comanda
+select * from comanda;
+select * from comanda select * from comanda;
+select * from comanda;
+delete from comanda where idcomanda in (188,
+189,
+190,
+191,
+192,
+193,
+194,
+195,
+196,
+197,
+198,
+199,
+200,
+201,
+202,
+203,
+204,
+205,
+206,
+207,
+208,
+209,
+210,
+211,
+212,
+213,
+214,
+215,
+216,
+217,
+218,
+219 );
+delete from comanda where idcomanda in (188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219 );
+select * from comanda;
+delete from comanda where idcomanda in ( 149,
+ 150,
+ 151,
+ 152,
+ 153,
+ 154,
+ 155,
+ 156,
+ 157,
+ 158,
+ 159,
+ 160,
+ 161,
+ 162,
+ 163,
+ 164,
+ 165,
+ 166,
+ 167,
+ 168,
+ 169,
+ 170,
+ 171,
+ 172,
+ 173,
+ 174,
+ 175,
+ 176,
+ 177,
+ 178,
+ 179,
+ 180,
+ 181,
+ 182,
+ 183,
+ 184,
+ 185,
+ 186,
+ 187);
+delete from comanda where idcomanda in ( 149,  150,  151,  152,  153,  154,  155,  156,  157,  158,  159,  160,  161,  162,  163,  164,  165,  166,  167,  168,  169,  170,  171,  172,  173,  174,  175,  176,  177,  178,  179,  180,  181,  182,  183,  184,  185,  186,  187);
+select * from comanda;
+select * from diagnostico_comanda;
+update diagnostico_comanda set comanda_idcomanda=0 where comanda_idcomanda in (119,120,121,122,123,124,125);
+delete from comanda where idcomanda not in (119,120,121,122,123,124,125);
+select * from comanda;
+delete from comanda where idcomanda =119;
+select * from insumo;
+select * from registro;
+select * from comanda;
+select * from insumo;
+select * from registro;;
+select * from registro;
+select * from insumo;
+select * from registro;
+select * from comanda;
+select * from insumo;
+select * from registro;
+select * from comanda;
+select * from insumo;
+select * from registro;;
+describe insumo;
+INSERT INTO insumo (nombre,codigo) SELECT 'GAMAGRAMA DINAMICO Y ESTATICO','MNU-100020'
+ FROM DUAL WHERE NOT EXISTS (SELECT nombre FROM insumo WHERE nombre='GAMAGRAMA DINAMICO Y ESTATICO';
+INSERT INTO insumo (nombre,codigo) SELECT 'GAMAGRAMA DINAMICO Y ESTATICO','MNU-100020'  FROM DUAL WHERE NOT EXISTS (SELECT nombre FROM insumo WHERE nombre='GAMAGRAMA DINAMICO Y ESTATICO';
+SELECT 'GAMAGRAMA DINAMICO Y ESTATICO','MNU-100020'
+ FROM DUAL;
+SELECT 'GAMAGRAMA DINAMICO Y ESTATICO','MNU-100020'  FROM DUAL;
+SELECT nombre FROM insumo WHERE nombre='GAMAGRAMA DINAMICO Y ESTATICO';
+SELECT 'GAMAGRAMA DINAMICO Y ESTATICO','MNU-100020'
+ FROM DUAL WHERE NOT EXISTS (SELECT nombre FROM insumo WHERE nombre='GAMAGRAMA DINAMICO Y ESTATICO');
+SELECT 'GAMAGRAMA DINAMICO Y ESTATICO','MNU-100020'  FROM DUAL WHERE NOT EXISTS (SELECT nombre FROM insumo WHERE nombre='GAMAGRAMA DINAMICO Y ESTATICO');
+describe insumo;
+INSERT INTO insumo (nombre,codigo) SELECT 'GAMAGRAMA DINAMICO Y ESTATICO','MNU-100020'
+ FROM DUAL WHERE NOT EXISTS (SELECT nombre FROM insumo WHERE nombre='GAMAGRAMA DINAMICO Y ESTATICO');
+INSERT INTO insumo (nombre,codigo) SELECT 'GAMAGRAMA DINAMICO Y ESTATICO','MNU-100020'  FROM DUAL WHERE NOT EXISTS (SELECT nombre FROM insumo WHERE nombre='GAMAGRAMA DINAMICO Y ESTATICO');
+use angeles;
+select * from insumo;
+select * from registro;;
+select * from registro;
+select * from comanda;
+describe diagnostico_comanda;
+select * from comanda where idepisodio=4607868;
+select * from insumo;
+select nombre from nombre
+;
+select nombre from insumo where nombre='FALLO RENAL CRONICO';
+select nombre from insumo where nombre='NEOPLASIA MALIGNA MAMA FEMENINA';
+select nombre from insumo where nombre='NEUMONIA POR BACTERIA NO ESPECIFICADO';
+select nombre from insumo where nombre='NORCURON AMP. 4 MG/1 ML';
+select nombre from insumo where nombre='FALLO RENAL CRONICO'  ; 
+select nombre from insumo where nombre='NEOPLASIA MALIGNA MAMA FEMENINA';
+select nombre from insumo where nombre='NEUMONIA POR BACTERIA NO ESPECIFICADO';
+select nombre from insumo where nombre='DOLOR ABDOMEN';
+select nombre from insumo where nombre='INFECCION POR BACTERIA INTESTINO NO ESPECIFICADO';
+select nombre from insumo where nombre='FALLO RENAL CRONICO'  ; 
+select nombre from insumo where nombre='NEOPLASIA MALIGNA MAMA FEMENINA';
+select nombre from insumo where nombre='NEUMONIA POR BACTERIA NO ESPECIFICADO';
+select nombre from insumo where nombre='DOLOR ABDOMEN';
+select nombre from insumo where nombre='INFECCION POR BACTERIA INTESTINO NO ESPECIFICADO';
+select nombre from insumo where nombre='LUMBALGIA';
+select nombre from insumo where nombre='ENFERMEDAD CARDIACA ISQUEMICA CRONICA NO ESPECIFICADO';
+select nombre from insumo where nombre='FARINGITIS AGUDA';
+select nombre from insumo where nombre='APENDICITIS AGUDA';
+select nombre from insumo where nombre='COLECISTITIS AGUDA';
+select nombre from insumo where nombre='DIABETES MELITUS';
+select nombre from insumo where nombre='DOLOR ABDOMEN';
+select nombre from insumo where nombre='LUMBALGIA';
+select nombre from insumo where nombre='NEUMONIA POR BACTERIA NO ESPECIFICADO';
+select nombre from insumo where nombre='CALCULO RIÑON Y URETER';
+select nombre from insumo where nombre='ENFERMEDAD CARDIACA ISQUEMICA CRONICA NO ESPECIFICADO';
+select nombre from insumo where nombre='FALLO RENAL CRONICO';
+select nombre from insumo where nombre='FARINGITIS AGUDA';
+select nombre from insumo where nombre='INFECCION POR BACTERIA INTESTINO NO ESPECIFICADO';
+select nombre from insumo where nombre='INFECCION TRACTO URINARIO NO ESPECIFICADO', 
+select nombre from insumo where nombre='INFECCION TRACTO URINARIO NO ESPECIFICADO',
+select nombre from insumo where nombre='NEOPLASIA MALIGNA MAMA FEMENINA';
+select nombre from insumo where nombre='INFECCION TRACTO URINARIO NO ESPECIFICADO',  select nombre from insumo where nombre='INFECCION TRACTO URINARIO NO ESPECIFICADO', select nombre from insumo where nombre='INFECCION TRACTO URINARIO NO ESPECIFICADO', select nombre from insumo where nombre='INFECCION TRACTO URINARIO NO ESPECIFICADO', select nombre from insumo where nombre='INFECCION TRACTO URINARIO NO ESPECIFICADO', select nombre from insumo where nombre='INFECCION TRACTO URINARIO NO ESPECIFICADO', select nombre from insumo where nombre='INFECCION TRACTO URINARIO NO ESPECIFICADO', select nombre from insumo where nombre='INFECCION TRACTO URINARIO NO ESPECIFICADO', select nombre from insumo where nombre='INFECCION TRACTO URINARIO NO ESPECIFICADO', select nombre from insumo where nombre='INFECCION TRACTO URINARIO NO ESPECIFICADO', select nombre from insumo where nombre='NEOPLASIA MALIGNA MAMA FEMENINA';
+select nombre from insumo where nombre='NEOPLASIA MALIGNA MAMA FEMENINA';
+select nombre from insumo where nombre='FALLO RENAL CRONICO'  ; 
+select nombre from insumo where nombre='NEOPLASIA MALIGNA MAMA FEMENINA';
+select nombre from insumo where nombre='NEUMONIA POR BACTERIA NO ESPECIFICADO';
+select nombre from insumo where nombre='DOLOR ABDOMEN';
+select nombre from insumo where nombre='INFECCION POR BACTERIA INTESTINO NO ESPECIFICADO';
+select nombre from insumo where nombre='LUMBALGIA';
+select nombre from insumo where nombre='ENFERMEDAD CARDIACA ISQUEMICA CRONICA NO ESPECIFICADO';
+select nombre from insumo where nombre='FARINGITIS AGUDA';
+select nombre from insumo where nombre='APENDICITIS AGUDA';
+select nombre from insumo where nombre='COLECISTITIS AGUDA';
+select nombre from insumo where nombre='DIABETES MELITUS';
+select nombre from insumo where nombre='DOLOR ABDOMEN';
+select nombre from insumo where nombre='LUMBALGIA';
+select nombre from insumo where nombre='NEUMONIA POR BACTERIA NO ESPECIFICADO';
+select nombre from insumo where nombre='CALCULO RIÑON Y URETER';
+select nombre from insumo where nombre='ENFERMEDAD CARDIACA ISQUEMICA CRONICA NO ESPECIFICADO';
+select nombre from insumo where nombre='FALLO RENAL CRONICO';
+select nombre from insumo where nombre='FARINGITIS AGUDA';
+select nombre from insumo where nombre='INFECCION POR BACTERIA INTESTINO NO ESPECIFICADO';
+select nombre from insumo where nombre='INFECCION TRACTO URINARIO NO ESPECIFICADO';
+select nombre from insumo where nombre='NEOPLASIA MALIGNA MAMA FEMENINA';
+select * from diagnostico;
+select nombre from diagnostico where nombre='FALLO RENAL CRONICO'  ; 
+select nombre from diagnostico where nombre='NEOPLASIA MALIGNA MAMA FEMENINA';
+select nombre from diagnostico where nombre='NEUMONIA POR BACTERIA NO ESPECIFICADO';
+select nombre from diagnostico where nombre='DOLOR ABDOMEN';
+select nombre from diagnostico where nombre='INFECCION POR BACTERIA INTESTINO NO ESPECIFICADO';
+desselect descripcion from diagnostico where descripcion='FALLO RENAL CRONICO'  ; 
+select descripcion from diagnostico where descripcion='NEOPLASIA MALIGNA MAMA FEMENINA';
+select descripcion from diagnostico where descripcion='NEUMONIA POR BACTERIA NO ESPECIFICADO';
+select descripcion from diagnostico where descripcion='DOLOR ABDOMEN';
+select descripcion from diagnostico where descripcion='INFECCION POR BACTERIA INTESTINO NO ESPECIFICADO';
+select descripcion from diagnostico where descripcion='LUMBALGIA';
+select descripcion from diagnostico where descripcion='ENFERMEDAD CARDIACA ISQUEMICA CRONICA NO ESPECIFICADO';
+select descripcion from diagnostico where descripcion='FALLO RENAL CRONICO'  ; 
+select descripcion from diagnostico where descripcion='NEOPLASIA MALIGNA MAMA FEMENINA';
+select descripcion from diagnostico where descripcion='NEUMONIA POR BACTERIA NO ESPECIFICADO';
+select descripcion from diagnostico where descripcion='DOLOR ABDOMEN';
+select descripcion from diagnostico where descripcion='INFECCION POR BACTERIA INTESTINO NO ESPECIFICADO';
+select descripcion from diagnostico where descripcion='LUMBALGIA';
+select descripcion from diagnostico where descripcion='ENFERMEDAD CARDIACA ISQUEMICA CRONICA NO ESPECIFICADO';
+select * from estatus_comanda;
+select * from status_comanda;
+select * from comanda;
+select * from comanda where idepisodio=4731369;
+describe diagnostico_comanda;
+describe diagnostico;
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,select iddiagnostico from diagnostico where descripcion='FALLO RENAL CRONICO',select idcomanda from comanda where idepisodio='4731369');
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select iddiagnostico from diagnostico where descripcion='FALLO RENAL CRONICO'),(select (idcomanda) from comanda where idepisodio='4731369');
+select (iddiagnostico) from diagnostico where descripcion='FALLO RENAL CRONICO';
+select (idcomanda) from comanda where idepisodio='4731369';
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='FALLO RENAL CRONICO'),(select (idcomanda) from comanda where idepisodio='4731369'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='FALLO RENAL CRONICO'),(select  (idcomanda) from comanda where idepisodio='4731369'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,select iddiagnostico from diagnostico where descripcion='NEOPLASIA MALIGNA MAMA FEMENINA',                              (select  (idcomanda) from comanda where idepisodio='4700190'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,select (iddiagnostico) from diagnostico where descripcion='NEOPLASIA MALIGNA MAMA FEMENINA',(select  (idcomanda) from comanda where idepisodio='4700190'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='NEOPLASIA MALIGNA MAMA FEMENINA',(select  (idcomanda) from comanda where idepisodio='4700190'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='NEOPLASIA MALIGNA MAMA FEMENINA'),(select  (idcomanda) from comanda where idepisodio='4700190'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='NEUMONIA POR BACTERIA NO ESPECIFICADO'),                        (select  (idcomanda) from comanda where idepisodio='4769963'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4554680'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='INFECCION POR BACTERIA INTESTINO NO ESPECIFICADO'),             (select  (idcomanda) from comanda where idepisodio='4738808'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='LUMBALGIA'),                                                    (select  (idcomanda) from comanda where idepisodio='4666126'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='ENFERMEDAD CARDIACA ISQUEMICA CRONICA NO ESPECIFICADO'),        (select  (idcomanda) from comanda where idepisodio='4729414'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='FARINGITIS AGUDA'),                                             (select  (idcomanda) from comanda where idepisodio='4607868'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='FARINGITIS AGUDA'),                                             (select  (idcomanda) from comanda where idepisodio='4640401'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='FARINGITIS AGUDA'),                                             (select  (idcomanda) from comanda where idepisodio='4749124'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='FARINGITIS AGUDA'),                                             (select  (idcomanda) from comanda where idepisodio='4767218'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='FARINGITIS AGUDA'),                                             (select  (idcomanda) from comanda where idepisodio='4788141'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='FARINGITIS AGUDA'),                                             (select  (idcomanda) from comanda where idepisodio='4811403'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='FARINGITIS AGUDA'),                                             (select  (idcomanda) from comanda where idepisodio='4880918'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='FARINGITIS AGUDA'),                                             (select  (idcomanda) from comanda where idepisodio='4807691'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='FARINGITIS AGUDA'),                                             (select  (idcomanda) from comanda where idepisodio='4809188'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='FARINGITIS AGUDA'),                                             (select  (idcomanda) from comanda where idepisodio='4833775'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='FARINGITIS AGUDA'),                                             (select  (idcomanda) from comanda where idepisodio='4883334'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='FARINGITIS AGUDA'),                                             (select  (idcomanda) from comanda where idepisodio='4892744'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='FARINGITIS AGUDA'),                                             (select  (idcomanda) from comanda where idepisodio='4644804'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='APENDICITIS AGUDA'),                                            (select  (idcomanda) from comanda where idepisodio='4455049'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='COLECISTITIS AGUDA'),                                           (select  (idcomanda) from comanda where idepisodio='4670021'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='COLECISTITIS AGUDA'),                                           (select  (idcomanda) from comanda where idepisodio='4674208'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='COLECISTITIS AGUDA'),                                           (select  (idcomanda) from comanda where idepisodio='4776000'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='COLECISTITIS AGUDA'),                                           (select  (idcomanda) from comanda where idepisodio='4776183'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='COLECISTITIS AGUDA'),                                           (select  (idcomanda) from comanda where idepisodio='4794595'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='COLECISTITIS AGUDA'),                                           (select  (idcomanda) from comanda where idepisodio='4797042'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='COLECISTITIS AGUDA'),                                           (select  (idcomanda) from comanda where idepisodio='4853666'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='COLECISTITIS AGUDA'),                                           (select  (idcomanda) from comanda where idepisodio='4862453'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='COLECISTITIS AGUDA'),                                           (select  (idcomanda) from comanda where idepisodio='4884751'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='COLECISTITIS AGUDA'),                                           (select  (idcomanda) from comanda where idepisodio='4913284'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='COLECISTITIS AGUDA'),                                           (select  (idcomanda) from comanda where idepisodio='4578288'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='COLECISTITIS AGUDA'),                                           (select  (idcomanda) from comanda where idepisodio='4662825'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='COLECISTITIS AGUDA'),                                           (select  (idcomanda) from comanda where idepisodio='4671086'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='COLECISTITIS AGUDA'),                                           (select  (idcomanda) from comanda where idepisodio='4958299'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='COLECISTITIS AGUDA'),                                           (select  (idcomanda) from comanda where idepisodio='4841429'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DIABETES MELITUS'),                                             (select  (idcomanda) from comanda where idepisodio='4603167'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DIABETES MELITUS'),                                             (select  (idcomanda) from comanda where idepisodio='4736677'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DIABETES MELITUS'),                                             (select  (idcomanda) from comanda where idepisodio='4755229'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DIABETES MELITUS'),                                             (select  (idcomanda) from comanda where idepisodio='4813106'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DIABETES MELITUS'),                                             (select  (idcomanda) from comanda where idepisodio='4779035'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DIABETES MELITUS'),                                             (select  (idcomanda) from comanda where idepisodio='4911360'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4590139'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4902212'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4674385'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4928242'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4554680'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4559443'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4564347'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4571573'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4611410'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4611246'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4632045'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4664051'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4674341'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4683149'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4704777'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4706839'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4707777'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4708092'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4760456'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4762799'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4773298'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4776023'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4776305'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4788955'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4791932'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4794562'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4812765'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4823419'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4823781'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4842229'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4842916'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4848037'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4881692'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4895512'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4897851'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4602419'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4667434'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4691388'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4705789'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4730604'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4788981'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4860321'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DOLOR ABDOMEN'),                                                (select  (idcomanda) from comanda where idepisodio='4899411'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='LUMBALGIA'),                                                    (select  (idcomanda) from comanda where idepisodio='4871829'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='LUMBALGIA'),                                                    (select  (idcomanda) from comanda where idepisodio='4767420'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='LUMBALGIA'),                                                    (select  (idcomanda) from comanda where idepisodio='4666126'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='LUMBALGIA'),                                                    (select  (idcomanda) from comanda where idepisodio='4671913'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='LUMBALGIA'),                                                    (select  (idcomanda) from comanda where idepisodio='4715489'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='LUMBALGIA'),                                                    (select  (idcomanda) from comanda where idepisodio='4700045'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='LUMBALGIA'),                                                    (select  (idcomanda) from comanda where idepisodio='4778211'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='LUMBALGIA'),                                                    (select  (idcomanda) from comanda where idepisodio='4799165'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='LUMBALGIA'),                                                    (select  (idcomanda) from comanda where idepisodio='4846548'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='LUMBALGIA'),                                                    (select  (idcomanda) from comanda where idepisodio='4581201'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='LUMBALGIA'),                                                    (select  (idcomanda) from comanda where idepisodio='4640274'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='LUMBALGIA'),                                                    (select  (idcomanda) from comanda where idepisodio='4708948'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='NEUMONIA POR BACTERIA NO ESPECIFICADO'),                        (select  (idcomanda) from comanda where idepisodio='4769963'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='CALCULO RIÑON Y URETER'),                                       (select  (idcomanda) from comanda where idepisodio='4924294'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='CALCULO RIÑON Y URETER'),                                       (select  (idcomanda) from comanda where idepisodio='4702983'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='CALCULO RIÑON Y URETER'),                                       (select  (idcomanda) from comanda where idepisodio='4816610'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='CALCULO RIÑON Y URETER'),                                       (select  (idcomanda) from comanda where idepisodio='4781797'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='CALCULO RIÑON Y URETER'),                                       (select  (idcomanda) from comanda where idepisodio='4812620'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='CALCULO RIÑON Y URETER'),                                       (select  (idcomanda) from comanda where idepisodio='4845912'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='CALCULO RIÑON Y URETER'),                                       (select  (idcomanda) from comanda where idepisodio='4873763'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='CALCULO RIÑON Y URETER'),                                       (select  (idcomanda) from comanda where idepisodio='4908813'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='CALCULO RIÑON Y URETER'),                                       (select  (idcomanda) from comanda where idepisodio='4617483'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='CALCULO RIÑON Y URETER'),                                       (select  (idcomanda) from comanda where idepisodio='4633879'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='CALCULO RIÑON Y URETER'),                                       (select  (idcomanda) from comanda where idepisodio='4722671'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='CALCULO RIÑON Y URETER'),                                       (select  (idcomanda) from comanda where idepisodio='4730743'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='CALCULO RIÑON Y URETER'),                                       (select  (idcomanda) from comanda where idepisodio='4776606'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='CALCULO RIÑON Y URETER'),                                       (select  (idcomanda) from comanda where idepisodio='4757450'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='CALCULO RIÑON Y URETER'),                                       (select  (idcomanda) from comanda where idepisodio='4778753'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='CALCULO RIÑON Y URETER'),                                       (select  (idcomanda) from comanda where idepisodio='4816610'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='CALCULO RIÑON Y URETER'),                                       (select  (idcomanda) from comanda where idepisodio='4831882'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='CALCULO RIÑON Y URETER'),                                       (select  (idcomanda) from comanda where idepisodio='4880727'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='CALCULO RIÑON Y URETER'),                                       (select  (idcomanda) from comanda where idepisodio='4888266'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='CALCULO RIÑON Y URETER'),                                       (select  (idcomanda) from comanda where idepisodio='4883242'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='CALCULO RIÑON Y URETER'),                                       (select  (idcomanda) from comanda where idepisodio='4888596'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='ENFERMEDAD CARDIACA ISQUEMICA CRONICA NO ESPECIFICADO'),        (select  (idcomanda) from comanda where idepisodio='4729414'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='ENFERMEDAD CARDIACA ISQUEMICA CRONICA NO ESPECIFICADO'),        (select  (idcomanda) from comanda where idepisodio='4840144'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='ENFERMEDAD CARDIACA ISQUEMICA CRONICA NO ESPECIFICADO'),        (select  (idcomanda) from comanda where idepisodio='4785191'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='FALLO RENAL CRONICO'),                                          (select  (idcomanda) from comanda where idepisodio='4731369'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='FALLO RENAL CRONICO'),                                          (select  (idcomanda) from comanda where idepisodio='4794097'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='FALLO RENAL CRONICO'),                                          (select  (idcomanda) from comanda where idepisodio='4851306'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='FALLO RENAL CRONICO'),                                          (select  (idcomanda) from comanda where idepisodio='4890143'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='FALLO RENAL CRONICO'),                                          (select  (idcomanda) from comanda where idepisodio='4908577'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='FALLO RENAL CRONICO'),                                          (select  (idcomanda) from comanda where idepisodio='4689883'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='FALLO RENAL CRONICO'),                                          (select  (idcomanda) from comanda where idepisodio='4743389'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='FALLO RENAL CRONICO'),                                          (select  (idcomanda) from comanda where idepisodio='4776266'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='FARINGITIS AGUDA'),                                             (select  (idcomanda) from comanda where idepisodio='4592010'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='FARINGITIS AGUDA'),                                             (select  (idcomanda) from comanda where idepisodio='4644804'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='INFECCION POR BACTERIA INTESTINO NO ESPECIFICADO'),             (select  (idcomanda) from comanda where idepisodio='4738808'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='INFECCION POR BACTERIA INTESTINO NO ESPECIFICADO'),             (select  (idcomanda) from comanda where idepisodio='4738797'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='INFECCION TRACTO URINARIO NO ESPECIFICADO'),                    (select  (idcomanda) from comanda where idepisodio='4617274'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='INFECCION TRACTO URINARIO NO ESPECIFICADO'),                    (select  (idcomanda) from comanda where idepisodio='4647557'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='INFECCION TRACTO URINARIO NO ESPECIFICADO'),                    (select  (idcomanda) from comanda where idepisodio='4658060'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='INFECCION TRACTO URINARIO NO ESPECIFICADO'),                    (select  (idcomanda) from comanda where idepisodio='4681883'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='INFECCION TRACTO URINARIO NO ESPECIFICADO'),                    (select  (idcomanda) from comanda where idepisodio='4543465'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='INFECCION TRACTO URINARIO NO ESPECIFICADO'),                    (select  (idcomanda) from comanda where idepisodio='4754768'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='INFECCION TRACTO URINARIO NO ESPECIFICADO'),                    (select  (idcomanda) from comanda where idepisodio='4761694'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='INFECCION TRACTO URINARIO NO ESPECIFICADO'),                    (select  (idcomanda) from comanda where idepisodio='4788667'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='INFECCION TRACTO URINARIO NO ESPECIFICADO'),                    (select  (idcomanda) from comanda where idepisodio='4893545'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='INFECCION TRACTO URINARIO NO ESPECIFICADO'),                    (select  (idcomanda) from comanda where idepisodio='4901434'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='NEOPLASIA MALIGNA MAMA FEMENINA'),                              (select  (idcomanda) from comanda where idepisodio='4707865'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='NEOPLASIA MALIGNA MAMA FEMENINA'),                              (select  (idcomanda) from comanda where idepisodio='4700190'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='NEOPLASIA MALIGNA MAMA FEMENINA'),                              (select  (idcomanda) from comanda where idepisodio='4707865'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='NEOPLASIA MALIGNA MAMA FEMENINA'),                              (select  (idcomanda) from comanda where idepisodio='4766289'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='NEOPLASIA MALIGNA MAMA FEMENINA'),                              (select  (idcomanda) from comanda where idepisodio='4792484'));
+select * from diagnostico_comanda;
+use angeles
+ALTER TABLE comanda AUTO_INCREMENT=1;
+use angeles;
+select * from diagnostico;
+select * from diagnostico where descripcion='DIABETES MELITUS';
+select * from diagnostico where descripcion='DIABETES MELLITUS';
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DIABETES MELLITUS'),                                             (select  (idcomanda) from comanda where idepisodio='4603167'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DIABETES MELLITUS'),                                             (select  (idcomanda) from comanda where idepisodio='4736677'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DIABETES MELLITUS'),                                             (select  (idcomanda) from comanda where idepisodio='4755229'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DIABETES MELLITUS'),                                             (select  (idcomanda) from comanda where idepisodio='4813106'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DIABETES MELLITUS'),                                             (select  (idcomanda) from comanda where idepisodio='4779035'));
+insert into diagnostico_comanda (status_comanda_idstatus_comanda,usuario_idusuario,diagnostico_iddiagnostico,comanda_idcomanda) values (0,0,(select (iddiagnostico) from diagnostico where descripcion='DIABETES MELLITUS'),                                             (select  (idcomanda) from comanda where idepisodio='4911360'));
+ALTER TABLE `angeles`.`evaluacion` 
+ADD COLUMN `diagnostico_iddiagnostico` INT NOT NULL AFTER `extra`,
+DROP PRIMARY KEY,
+ADD PRIMARY KEY (`idevaluacion`, `insumo_idinsumo`, `gri_idgri`, `usuario_idusuario`, `diagnostico_iddiagnostico`),
+ADD INDEX `fk_evaluacion_diagnostico1_idx` (`diagnostico_iddiagnostico` ASC);
+ALTER TABLE `angeles`.`evaluacion`  ADD COLUMN `diagnostico_iddiagnostico` INT NOT NULL AFTER `extra`, DROP PRIMARY KEY, ADD PRIMARY KEY (`idevaluacion`, `insumo_idinsumo`, `gri_idgri`, `usuario_idusuario`, `diagnostico_iddiagnostico`), ADD INDEX `fk_evaluacion_diagnostico1_idx` (`diagnostico_iddiagnostico` ASC);
+ALTER TABLE `angeles`.`evaluacion` 
+ADD COLUMN `diagnostico_iddiagnostico` INT NOT NULL AFTER `extra`,
+DROP PRIMARY KEY,
+ADD PRIMARY KEY (`idevaluacion`, `insumo_idinsumo`, `gri_idgri`, `usuario_idusuario`, `diagnostico_iddiagnostico`),
+ADD INDEX `fk_evaluacion_diagnostico1_idx` (`diagnostico_iddiagnostico` ASC);
+ALTER TABLE `angeles`.`evaluacion`  ADD COLUMN `diagnostico_iddiagnostico` INT NOT NULL AFTER `extra`, DROP PRIMARY KEY, ADD PRIMARY KEY (`idevaluacion`, `insumo_idinsumo`, `gri_idgri`, `usuario_idusuario`, `diagnostico_iddiagnostico`), ADD INDEX `fk_evaluacion_diagnostico1_idx` (`diagnostico_iddiagnostico` ASC);
+Operation failed: std::exception
+ERROR 2013: Lost connection to MySQL server during query
+SQL Statement:
+ALTER TABLE `angeles`.`evaluacion` 
+DROP FOREIGN KEY `fk_evaluacion_gri1`
+;
+Operation failed: std::exception ERROR 2013: Lost connection to MySQL server during query SQL Statement: ALTER TABLE `angeles`.`evaluacion`  DROP FOREIGN KEY `fk_evaluacion_gri1`;
+ALTER TABLE `angeles`.`evaluacion` 
+DROP FOREIGN KEY `fk_evaluacion_gri1`;
+ALTER TABLE `angeles`.`evaluacion`  DROP FOREIGN KEY `fk_evaluacion_gri1`;
+ALTER TABLE `angeles`.`evaluacion` 
+ADD COLUMN `diagnostico_iddiagnostico` INT NOT NULL AFTER `extra`,
+DROP PRIMARY KEY,
+ADD PRIMARY KEY (`idevaluacion`, `insumo_idinsumo`, `gri_idgri`, `usuario_idusuario`, `diagnostico_iddiagnostico`),
+ADD INDEX `fk_evaluacion_diagnostico1_idx` (`diagnostico_iddiagnostico` ASC);
+ALTER TABLE `angeles`.`evaluacion`  ADD COLUMN `diagnostico_iddiagnostico` INT NOT NULL AFTER `extra`, DROP PRIMARY KEY, ADD PRIMARY KEY (`idevaluacion`, `insumo_idinsumo`, `gri_idgri`, `usuario_idusuario`, `diagnostico_iddiagnostico`), ADD INDEX `fk_evaluacion_diagnostico1_idx` (`diagnostico_iddiagnostico` ASC);
+show tables;
+use angeles;
+show tables;
+select * from comanda;
+select * from diagnostico;
+select * from diagnostico limit 10;
+select * from diagnostico limit 20;
+use angeles;
+select * from diagnostico_comanda;
+select * from diagnostico_comanda limit 10;
+update diagnostico_comanda set  status_comanda_idstatus_comanda=0;
+select * from diagnostico_comanda limit 10;
+use angeles;
+select * from diagnostico_comanda; 

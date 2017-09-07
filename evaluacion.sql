@@ -1,0 +1,20 @@
+CREATE TABLE `evaluacion` (
+  `idevaluacion` int(11) NOT NULL AUTO_INCREMENT,
+  `insumo_idinsumo` int(11) NOT NULL,
+  `gri_idgri` int(11) NULL,
+  `usuario_idusuario` int(11) NOT NULL,
+  `diagnostico_iddiagnostico` int(11) NOT NULL,
+  `fecha` date DEFAULT NULL,
+  `incidencia` tinyint(4) DEFAULT NULL,
+  `extra` varchar(100) DEFAULT NULL,
+  `check` int(11) NOT NULL,
+  PRIMARY KEY (`idevaluacion`,`insumo_idinsumo`,`usuario_idusuario`,`diagnostico_iddiagnostico`),
+  UNIQUE KEY `idevaluacion_UNIQUE` (`idevaluacion`),
+  KEY `fk_evaluacion_insumo1_idx` (`insumo_idinsumo`),
+  KEY `fk_evaluacion_usuario1_idx` (`usuario_idusuario`),
+  KEY `fk_evaluacion_diagnostico1_idx` (`diagnostico_iddiagnostico`),
+  CONSTRAINT `fk_evaluacion_gri1` FOREIGN KEY (`gri_idgri`) REFERENCES `gri` (`idgri`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_evaluacion_diagnostico1` FOREIGN KEY (`diagnostico_iddiagnostico`) REFERENCES `diagnostico` (`iddiagnostico`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_evaluacion_insumo1` FOREIGN KEY (`insumo_idinsumo`) REFERENCES `insumo` (`idinsumo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_evaluacion_usuario1` FOREIGN KEY (`usuario_idusuario`) REFERENCES `usuario` (`idusuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1
